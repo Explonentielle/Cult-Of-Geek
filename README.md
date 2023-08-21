@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+Cult Of Geek  - Plateforme de Quiz sur la Culture Pop et Web
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Cult Of Geek  est une plateforme web interactive qui permet aux utilisateurs de tester leurs connaissances en culture populaire et web. Les utilisateurs peuvent participer à des quiz, créer leurs propres quiz personnalisés et les publier, ainsi que consulter et noter les quiz créés par d'autres utilisateurs.
 
-## Available Scripts
+Table des matières: 
 
-In the project directory, you can run:
+Aperçu
+Fonctionnalités
+Technologies Utilisées
+Installation
+Utilisation
+Contributions
+License
+Aperçu
 
-### `npm start`
+<img src="process.env.PUBLIC_URL/media/readme.png">
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Fonctionnalités
+Quiz sur la Culture Pop et Web : Les utilisateurs peuvent participer à une variété de quiz passionnants sur des sujets liés à la culture populaire et web.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Création de Quiz Personnalisés : Les utilisateurs ont la possibilité de créer leurs propres quiz personnalisés en ajoutant des questions, des réponses et des options.
 
-### `npm test`
+Publication de Quiz : Une fois créés, les quiz peuvent être publiés sur la plateforme pour que d'autres utilisateurs puissent les découvrir et les jouer.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Consultation et Notation de Quiz : Les utilisateurs peuvent parcourir les quiz publiés par d'autres utilisateurs, les jouer et leur attribuer des notes.
 
-### `npm run build`
+Technologies Utilisées: 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+React : La plateforme est développée en utilisant la bibliothèque JavaScript React pour une expérience utilisateur interactive et réactive.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Firebase : Firebase est utilisé pour stocker et gérer les quiz créés par les utilisateurs, ainsi que pour gérer l'authentification.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Sass : Les styles sont mis en forme à l'aide de CSS pour une interface utilisateur attrayante et conviviale.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Utilisation :
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Inscrivez-vous ou connectez-vous à l'application.
+Parcourez les quiz existants et jouez-y.
+Créez votre propre quiz en cliquant sur "Créer un Quiz" et suivez les instructions.
+Publiez votre quiz pour que d'autres utilisateurs puissent le découvrir et le noter.
+Explorez les quiz publiés par d'autres utilisateurs et attribuez-leur des notes.
+Profitez de l'apprentissage et de l'amusement en testant vos connaissances en culture pop et web !
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Contributions : 
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Les contributions à ce projet sont les bienvenues ! Si vous souhaitez contribuer, veuillez suivre ces étapes :
+Fork du projet
+Créez une branche pour vos modifications (git checkout -b fonctionnalité/nouvelle-fonctionnalité)
+Commit de vos modifications (git commit -m 'Ajout de la nouvelle fonctionnalité')
+Push de la branche (git push origin fonctionnalité/nouvelle-fonctionnalité)
+Ouvrez une Pull Request
+License
+Ce projet est sous licence MIT. Veuillez consulter le fichier LICENSE pour plus de détails.
