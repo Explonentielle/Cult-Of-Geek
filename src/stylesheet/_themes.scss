@@ -1,0 +1,31 @@
+.Movies {
+    background: url("../../public/media/films.jpg");
+}
+.Series {
+    background: url("../../public/media/series.jpg");
+}
+.Cartoons {
+    background: url("../../public/media/cartoons.jpeg");
+}
+.VideoGame {
+    background: url("../../public/media/videogame.jpg");
+}
+.general {
+    background: url("../../public/media/films.jpg");
+}
+
+
+.card {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 3rem;
+    border-radius: 5rem;
+    text-align: center;
+    
+    figcaption {
+        color: rgb(255, 255, 255);
+        font-weight: 900;
+        font-size: 4rem;
+    }
+}

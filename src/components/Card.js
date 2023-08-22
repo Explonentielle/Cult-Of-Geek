@@ -1,15 +1,11 @@
 import React from 'react'
-import Button from './Button';
 
-const Card = ({ title, content, image, className }) => {
+const Card = ({ title, action, className }) => {
+  console.log(className)
   return (
-    <div className={className}>
-      <img src={image} alt="Card image" />
-      <h2>{title}</h2>
-      <p>{content}</p>
-      <Button/>
-    </div>
+      <figure onClick={action} className={`${className} card`}>
+        <figcaption>{title}</figcaption>
+      </figure>
   );
 };
-
 export default Card
