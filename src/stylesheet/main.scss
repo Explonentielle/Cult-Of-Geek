@@ -3,6 +3,7 @@
 @import "header";
 @import "footer";
 @import "themes";
+@import "quizz";
 @import "components";
 @import url('https://fonts.googleapis.com/css2?family=REM:wght@100&display=swap');
 
@@ -15,7 +16,8 @@
 
 .Container {
     background-color:rgb(254, 247, 231);
-    height: 400vh;
+    height: 100%;
+    min-height: 100vh;
     padding: 10rem;
 
     @media screen and (min-width: 1440px) {

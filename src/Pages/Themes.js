@@ -6,18 +6,18 @@ import Data from '../data/answers'
 const Themes = () => {
   const navigate = useNavigate()
 
-  const handleClick = (value) => {
+  const handleClick = (value, content) => {
     console.log(value)
-    navigate(`/Quizz/${value}`)
-  }
+    navigate(`/Quizz/${value}`, { state: { content } });
+  };
 
   const cardList = Data.map((theme, index) => {
     return (
     <Card
       key={index}
-      className={theme.title}
+      className={`${theme.title} card`}
       title={theme.title}
-      action={() => handleClick(theme.title)}
+      action={() => handleClick(theme.title, theme.content )}
     />)
   })
 
