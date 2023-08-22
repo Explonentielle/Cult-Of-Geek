@@ -1,5 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import Card from '../components/Card'
+import Data from '../data/answers'
 
 const Themes = () => {
   const navigate = useNavigate()
@@ -9,15 +11,19 @@ const Themes = () => {
     navigate(`/Quizz/${value}`)
   }
 
+  const cardList = Data.map((theme, index) => {
+    return (
+    <Card
+      key={index}
+      className={theme.title}
+      title={theme.title}
+      action={() => handleClick(theme.title)}
+    />)
+  })
+
   return (
     <div className="Container">
-        <ul>
-          <li onClick={() => handleClick("Films")}>Films</li>
-          <li onClick={() =>handleClick("Series")}>Series</li>
-          <li onClick={() =>handleClick("Jeux Video")}>Jeux Video</li>
-          <li onClick={() =>handleClick("dessins animés")}>dessins animés</li>
-          <li onClick={() =>handleClick("Général")}>Général</li>
-        </ul>
+      {cardList}
     </div>
   )
 }
