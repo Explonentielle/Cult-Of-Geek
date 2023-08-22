@@ -1,0 +1,108 @@
+{
+    "quiz": {
+      "title": "Quiz Général sur la Culture Geek",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Quel dessin animé a pour mascotte une souris électrique ?",
+          "answers": [
+            { "id": 1, "text": "Pokémon", "correct": true },
+            { "id": 2, "text": "Mickey Mouse", "correct": false },
+            { "id": 3, "text": "Tom and Jerry", "correct": false },
+            { "id": 4, "text": "Bugs Bunny", "correct": false }
+          ]
+        },
+        {
+          "id": 2,
+          "question": "Quel est le vrai nom de Iron Man ?",
+          "answers": [
+            { "id": 5, "text": "Tony Stark", "correct": true },
+            { "id": 6, "text": "Bruce Wayne", "correct": false },
+            { "id": 7, "text": "Steve Rogers", "correct": false },
+            { "id": 8, "text": "Peter Parker", "correct": false }
+          ]
+        },
+        {
+          "id": 3,
+          "question": "Dans la série Mass Effect, comment se nomment les principaux adversaires ?",
+          "answers": [
+            { "id": 9, "text": "Les Moissonneurs", "correct": true },
+            { "id": 10, "text": "Les Renégats", "correct": false },
+            { "id": 11, "text": "Les Zergs", "correct": false },
+            { "id": 12, "text": "Les Collecteurs", "correct": false }
+          ]
+        },
+        {
+          "id": 4,
+          "question": "Quelle est la devise de la maison Stark dans Game of Thrones ?",
+          "answers": [
+            { "id": 13, "text": "L'Hiver Vient", "correct": true },
+            { "id": 14, "text": "Unis Nous Resterons", "correct": false },
+            { "id": 15, "text": "Le Feu et le Sang", "correct": false },
+            { "id": 16, "text": "Force et Honneur", "correct": false }
+          ]
+        },
+        {
+          "id": 5,
+          "question": "Dans le lore de Legend of Zelda, qui est Epona ?",
+          "answers": [
+            { "id": 17, "text": "Un cheval", "correct": true },
+            { "id": 18, "text": "Un elfe", "correct": false },
+            { "id": 19, "text": "Un dragon", "correct": false },
+            { "id": 20, "text": "Un magicien", "correct": false }
+          ]
+        },
+        {
+          "id": 6,
+          "question": "Dans quel film le protagoniste boit-il un cocktail appelé White Russian ?",
+          "answers": [
+            { "id": 21, "text": "The Big Lebowski", "correct": true },
+            { "id": 22, "text": "Pulp Fiction", "correct": false },
+            { "id": 23, "text": "Matrix", "correct": false },
+            { "id": 24, "text": "Retour vers le futur", "correct": false }
+          ]
+        },
+        {
+          "id": 7,
+          "question": "Quelle était la mascotte de Sega avant Sonic ?",
+          "answers": [
+            { "id": 25, "text": "Alex Kidd", "correct": true },
+            { "id": 26, "text": "Knuckles", "correct": false },
+            { "id": 27, "text": "Tails", "correct": false },
+            { "id": 28, "text": "Robotnik", "correct": false }
+          ]
+        },
+        {
+          "id": 8,
+          "question": "Comment s'appelle le personnage principal de la série des Metal Gear ?",
+          "answers": [
+            { "id": 29, "text": "Solid Snake", "correct": true },
+            { "id": 30, "text": "Liquid Snake", "correct": false },
+            { "id": 31, "text": "Big Boss", "correct": false },
+            { "id": 32, "text": "Revolver Ocelot", "correct": false }
+          ]
+        },
+        {
+          "id": 9,
+          "question": "Quel est le gain promis initialement au vainqueur de Squid Game ?",
+          "answers": [
+            { "id": 33, "text": "45 milliards de wons", "correct": true },
+            { "id": 34, "text": "1 milliard de dollars", "correct": false },
+            { "id": 35, "text": "100 millions de yens", "correct": false },
+            { "id": 36, "text": "10 000 euros", "correct": false }
+          ]
+        },
+        {
+          "id": 10,
+          "question": "Quel personnage complètement chauve a une force dépassant toutes les autres ?",
+          "answers": [
+            { "id": 37, "text": "Saitama (One Punch Man)", "correct": true },
+            { "id": 38, "text": "Krillin", "correct": false },
+            { "id": 39, "text": "Piccolo", "correct": false },
+            { "id": 40, "text": "Gon Freecss", "correct": false }
+          ]
+        }
+      ]
+    }
+  }
+  

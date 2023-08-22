@@ -1,0 +1,110 @@
+
+{
+  "quiz": {
+    "title": "Quiz sur les jeux vidéo",
+    "questions": [
+      {
+        "id": 1,
+        "question": "Quelle était la mascotte de Sega avant Sonic ?",
+        "answers": [
+          { "id": 1, "text": "Alex Kidd", "correct": true },
+          { "id": 2, "text": "Sonic the Hedgehog", "correct": false },
+          { "id": 3, "text": "Tails", "correct": false },
+          { "id": 4, "text": "Knuckles", "correct": false }
+        ]
+      },
+      {
+        "id": 2,
+        "question": "Comment s'appelle le personnage principal de la série des Metal Gear ?",
+        "answers": [
+          { "id": 5, "text": "Solid Snake", "correct": true },
+          { "id": 6, "text": "Liquid Snake", "correct": false },
+          { "id": 7, "text": "Big Boss", "correct": false },
+          { "id": 8, "text": "Revolver Ocelot", "correct": false }
+        ]
+      },
+      {
+        "id": 3,
+        "question": "Quelle est la dernière console produite par Sega ?",
+        "answers": [
+          { "id": 9, "text": "La Dreamcast", "correct": true },
+          { "id": 10, "text": "La Saturn", "correct": false },
+          { "id": 11, "text": "La Mega Drive", "correct": false },
+          { "id": 12, "text": "La Master System", "correct": false }
+        ]
+      },
+      {
+        "id": 4,
+        "question": "Quelle est l'attaque spécifique de Kirby ?",
+        "answers": [
+          { "id": 13, "text": "Aspiration", "correct": true },
+          { "id": 14, "text": "Inhalation", "correct": false },
+          { "id": 15, "text": "Absorption", "correct": false },
+          { "id": 16, "text": "Déglutition", "correct": false }
+        ]
+      },
+      {
+        "id": 5,
+        "question": "Dans quel FIFA est sorti le mode Ultimate Team ?",
+        "answers": [
+          { "id": 17, "text": "FIFA 10", "correct": true },
+          { "id": 18, "text": "FIFA 15", "correct": false },
+          { "id": 19, "text": "FIFA 20", "correct": false },
+          { "id": 20, "text": "FIFA 22", "correct": false }
+        ]
+      },
+      {
+        "id": 6,
+        "question": "Dans le lore de Legend of Zelda, qui est Epona ?",
+        "answers": [
+          { "id": 21, "text": "Un cheval", "correct": true },
+          { "id": 22, "text": "Un elfe", "correct": false },
+          { "id": 23, "text": "Un dragon", "correct": false },
+          { "id": 24, "text": "Un sorcier", "correct": false }
+        ]
+      },
+      {
+        "id": 7,
+        "question": "Dans Street Fighter, quels sont les personnages principaux ?",
+        "answers": [
+          { "id": 25, "text": "Ryu et Ken", "correct": true },
+          { "id": 26, "text": "Guile et Chun-Li", "correct": false },
+          { "id": 27, "text": "M. Bison et Sagat", "correct": false },
+          { "id": 28, "text": "Blanka et Dhalsim", "correct": false }
+        ]
+      },
+      {
+        "id": 8,
+        "question": "Dans la série Mass Effect, comment se nomment les principaux adversaires ?",
+        "answers": [
+          { "id": 29, "text": "Les Moissonneurs", "correct": true },
+          { "id": 30, "text": "Les Ravageurs", "correct": false },
+          { "id": 31, "text": "Les Envahisseurs", "correct": false },
+          { "id": 32, "text": "Les Conquérants", "correct": false }
+        ]
+      },
+      {
+        "id": 9,
+        "question": "Dans World of Warcraft, quelle est la capitale de l'Alliance ?",
+        "answers": [
+          { "id": 33, "text": "Hurlevent", "correct": true },
+          { "id": 34, "text": "Darnassus", "correct": false },
+          { "id": 35, "text": "Forgefer", "correct": false },
+          { "id": 36, "text": "Exodar", "correct": false }
+        ]
+      },
+      {
+        "id": 10,
+        "question": "Quelle est la devise du jeu League of Legends ?",
+        "answers": [
+          { "id": 37, "text": "Accomplissons de grandes choses ensemble", "correct": true },
+          { "id": 38, "text": "Vaincre ou mourir", "correct": false },
+          { "id": 39, "text": "Toujours plus fort", "correct": false },
+          { "id": 40, "text": "La victoire à tout prix", "correct": false }
+        ]
+      }
+    ]
+  }
+}
+
+

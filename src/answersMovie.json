@@ -1,0 +1,128 @@
+{
+    "quiz": {
+      "title": "Quiz sur les films",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Dans quel film le protagoniste boit-il un cocktail appelé White Russian ?",
+          "answers": [
+            { "id": 1, "text": "The Big Lebowski", "correct": true },
+            { "id": 2, "text": "Pulp Fiction", "correct": false },
+            { "id": 3, "text": "Matrix", "correct": false },
+            { "id": 4, "text": "Retour vers le futur", "correct": false }
+          ]
+        },
+        {
+          "id": 2,
+          "question": "Comment se nomme la danse faite dans le film Pulp Fiction ?",
+          "answers": [
+            { "id": 5, "text": "Le twist", "correct": true },
+            { "id": 6, "text": "Le rock", "correct": false },
+            { "id": 7, "text": "Le foxtrot", "correct": false },
+            { "id": 8, "text": "La valse", "correct": false }
+          ]
+        },
+        {
+          "id": 3,
+          "question": "Dans Le Seigneur des Anneaux de Peter Jackson, qui dirige les elfes ?",
+          "answers": [
+            { "id": 9, "text": "Elrond", "correct": true },
+            { "id": 10, "text": "Legolas", "correct": false },
+            { "id": 11, "text": "Gandalf", "correct": false },
+            { "id": 12, "text": "Aragorn", "correct": false }
+          ]
+        },
+        {
+          "id": 4,
+          "question": "Quel est le vrai nom de Iron Man ?",
+          "answers": [
+            { "id": 13, "text": "Tony Stark", "correct": true },
+            { "id": 14, "text": "Bruce Wayne", "correct": false },
+            { "id": 15, "text": "Steve Rogers", "correct": false },
+            { "id": 16, "text": "Peter Parker", "correct": false }
+          ]
+        },
+        {
+          "id": 5,
+          "question": "Quel acteur incarne le premier Peter Parker alias Spider-Man dans le premier film de 2002 ?",
+          "answers": [
+            { "id": 17, "text": "Tobey Maguire", "correct": true },
+            { "id": 18, "text": "Andrew Garfield", "correct": false },
+            { "id": 19, "text": "Tom Holland", "correct": false },
+            { "id": 20, "text": "Robert Downey Jr.", "correct": false }
+          ]
+        },
+        {
+          "id": 6,
+          "question": "Quelle est la capitale du Royaume de Narnia ?",
+          "answers": [
+            { "id": 21, "text": "Cair Paravel", "correct": true },
+            { "id": 22, "text": "Narnia City", "correct": false },
+            { "id": 23, "text": "Aslanburg", "correct": false },
+            { "id": 24, "text": "Archenland", "correct": false }
+          ]
+        },
+        {
+          "id": 7,
+          "question": "Dans Matrix, de quelle couleur est la pilule qui permet de sortir de la Matrice ?",
+          "answers": [
+            { "id": 25, "text": "Rouge", "correct": true },
+            { "id": 26, "text": "Bleue", "correct": false },
+            { "id": 27, "text": "Verte", "correct": false },
+            { "id": 28, "text": "Jaune", "correct": false }
+          ]
+        },
+        {
+          "id": 8,
+          "question": "Quelle chanson conclut le film Entretien avec un vampire ?",
+          "answers": [
+            { "id": 29, "text": "Sympathy for the Devil", "correct": true },
+            { "id": 30, "text": "Paint It Black", "correct": false },
+            { "id": 31, "text": "No More Tears", "correct": false },
+            { "id": 32, "text": "Bohemian Rhapsody", "correct": false }
+          ]
+        },
+        {
+          "id": 9,
+          "question": "Dans Retour vers le futur, il faut combien de gigawatts pour que la machine voyage dans le temps ?",
+          "answers": [
+            { "id": 33, "text": "1.21 gigawatts", "correct": true },
+            { "id": 34, "text": "2.21 gigawatts", "correct": false },
+            { "id": 35, "text": "0.88 gigawatts", "correct": false },
+            { "id": 36, "text": "1.88 gigawatts", "correct": false }
+          ]
+        },
+        {
+          "id": 10,
+          "question": "Où est né Luke Skywalker dans la série de films Star Wars ?",
+          "answers": [
+            { "id": 37, "text": "Polis Massa", "correct": true },
+            { "id": 38, "text": "Tatooine", "correct": false },
+            { "id": 39, "text": "Coruscant", "correct": false },
+            { "id": 40, "text": "Naboo", "correct": false }
+          ]
+        },
+        {
+          "id": 11,
+          "question": "Quel est le nom de la Sorcière Rouge ?",
+          "answers": [
+            { "id": 41, "text": "Wanda Maximoff", "correct": true },
+            { "id": 42, "text": "Natasha Romanoff", "correct": false },
+            { "id": 43, "text": "Jean Grey", "correct": false },
+            { "id": 44, "text": "Mystique", "correct": false }
+          ]
+        },
+        {
+          "id": 12,
+          "question": "Comment s'appelle l'invention créée par les frères Weasley qui permet de sécher les cours ?",
+          "answers": [
+            { "id": 45, "text": "La Boîte à Flemme", "correct": true },
+            { "id": 46, "text": "Le Retardateur", "correct": false },
+            { "id": 47, "text": "L'Heureux Hasard", "correct": false },
+            { "id": 48, "text": "La Machine à Excuses", "correct": false }
+          ]
+        }
+      ]
+    }
+  }
+  

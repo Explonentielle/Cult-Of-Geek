@@ -1,0 +1,108 @@
+{
+    "quiz": {
+      "title": "Quiz sur les séries",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Dans la série Charmed, comment s'appelle le grimoire des 3 sœurs ?",
+          "answers": [
+            { "id": 1, "text": "Le Livre des Ombres", "correct": true },
+            { "id": 2, "text": "Le Grimoire Enchanté", "correct": false },
+            { "id": 3, "text": "Le Livre Magique", "correct": false },
+            { "id": 4, "text": "Le Grimoire des Sorcières", "correct": false }
+          ]
+        },
+        {
+          "id": 2,
+          "question": "Dans Le Caméléon, comment se nomme le personnage principal ?",
+          "answers": [
+            { "id": 5, "text": "Jarod", "correct": true },
+            { "id": 6, "text": "Thomas", "correct": false },
+            { "id": 7, "text": "David", "correct": false },
+            { "id": 8, "text": "Alex", "correct": false }
+          ]
+        },
+        {
+          "id": 3,
+          "question": "Quel est le gain promis initialement au vainqueur de Squid Game ?",
+          "answers": [
+            { "id": 9, "text": "45 milliards de wons", "correct": true },
+            { "id": 10, "text": "1 milliard de dollars", "correct": false },
+            { "id": 11, "text": "100 millions de yens", "correct": false },
+            { "id": 12, "text": "10 000 euros", "correct": false }
+          ]
+        },
+        {
+          "id": 4,
+          "question": "Quel est le moyen de locomotion du Docteur dans la série Doctor Who ?",
+          "answers": [
+            { "id": 13, "text": "Le TARDIS", "correct": true },
+            { "id": 14, "text": "La DeLorean", "correct": false },
+            { "id": 15, "text": "Le Téléporteur", "correct": false },
+            { "id": 16, "text": "Le Voyageur Temporel", "correct": false }
+          ]
+        },
+        {
+          "id": 5,
+          "question": "Dans la série Stranger Things, comment s'appellent les monstres qui viennent d'une autre dimension ?",
+          "answers": [
+            { "id": 17, "text": "Les Demogorgons", "correct": true },
+            { "id": 18, "text": "Les Ombregorgons", "correct": false },
+            { "id": 19, "text": "Les Étrangers", "correct": false },
+            { "id": 20, "text": "Les Monstrogorgons", "correct": false }
+          ]
+        },
+        {
+          "id": 6,
+          "question": "Dans la série Friends, qui sort avec Monica ?",
+          "answers": [
+            { "id": 21, "text": "Chandler", "correct": true },
+            { "id": 22, "text": "Joey", "correct": false },
+            { "id": 23, "text": "Ross", "correct": false },
+            { "id": 24, "text": "Phoebe", "correct": false }
+          ]
+        },
+        {
+          "id": 7,
+          "question": "Quelle est la devise de la maison Stark dans Game of Thrones ?",
+          "answers": [
+            { "id": 25, "text": "L'Hiver Vient", "correct": true },
+            { "id": 26, "text": "Unis Nous Resterons", "correct": false },
+            { "id": 27, "text": "Le Feu et le Sang", "correct": false },
+            { "id": 28, "text": "Force et Honneur", "correct": false }
+          ]
+        },
+        {
+          "id": 8,
+          "question": "Comment se nomme le plus célèbre vaisseau dans Star Trek ?",
+          "answers": [
+            { "id": 29, "text": "USS Enterprise", "correct": true },
+            { "id": 30, "text": "USS Voyager", "correct": false },
+            { "id": 31, "text": "USS Discovery", "correct": false },
+            { "id": 32, "text": "USS Defiant", "correct": false }
+          ]
+        },
+        {
+          "id": 9,
+          "question": "Dans X-Files, quel est le but de Mulder ?",
+          "answers": [
+            { "id": 33, "text": "Retrouver sa sœur", "correct": true },
+            { "id": 34, "text": "Chasser les extraterrestres", "correct": false },
+            { "id": 35, "text": "Déjouer des complots gouvernementaux", "correct": false },
+            { "id": 36, "text": "Découvrir la vérité", "correct": false }
+          ]
+        },
+        {
+          "id": 10,
+          "question": "Quelle est la passion secrète de Dexter ?",
+          "answers": [
+            { "id": 37, "text": "La pêche", "correct": true },
+            { "id": 38, "text": "Le jardinage", "correct": false },
+            { "id": 39, "text": "La cuisine", "correct": false },
+            { "id": 40, "text": "La lecture", "correct": false }
+          ]
+        }
+      ]
+    }
+  }
+  
