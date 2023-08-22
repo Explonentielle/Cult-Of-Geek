@@ -4,7 +4,7 @@ import React from 'react'
 const Acceuil = () => {
     return (
         <div className="Container">
-            <p>Accueil </p>
+            <p>Êtes-vous un vrai geek ? Mettez vos connaissances à l'épreuve !  </p>
         </div>
     )
 }
