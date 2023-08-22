@@ -1,0 +1,23 @@
+@import "mixins";
+@import "reset";
+@import "header";
+@import "footer";
+@import "components";
+@import url('https://fonts.googleapis.com/css2?family=REM:wght@100&display=swap');
+
+
+* {
+    list-style-type:none ;
+    color: black;
+    font-family: 'REM', sans-serif;
+}
+
+.Container {
+    background-color:rgb(254, 247, 231);
+    height: 400vh;
+    padding: 10rem;
+
+    @media screen and (min-width: 1440px) {
+        padding: 20rem;
+    }
+}

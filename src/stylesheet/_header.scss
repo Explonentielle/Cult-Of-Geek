@@ -1,0 +1,103 @@
+.header {
+    background-color:rgb(255, 252, 249);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+    height: 10vh;
+
+    .menuContainer {
+        display: flex;
+        align-items: center;
+        margin-right: 3rem;
+
+        .menu {
+            background:transparent;
+            color: black;
+            align-items: center;
+            justify-content: center ;
+
+            li{
+                p{
+                    font-size: 2rem;
+                    font-weight: 900;
+
+                    @media screen and (max-width: 1440px) {
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.OpenMenu {
+    color: rgb(0, 0, 0);
+    font-size: 3rem;
+    font-weight: 900;
+    background-color:  rgba(255, 255, 255, 0.4);
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction:column ;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.burgerContainer {
+    z-index: 3;
+}
+
+.burger {
+    position: relative;
+    height: calc(1.5rem + 4vh);
+    margin:0 2vw ;
+}
+.burgerMenu{
+    margin: 0;
+    text-align: center;
+
+}
+
+
+.logo {
+    z-index: 3;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height:100%;
+    color: white;
+    cursor: pointer;
+}
+
+
+
+
+:where(.ant-menu-light .ant-menu-item-selected), :where(.ant-menu-light > .ant-menu .ant-menu-item-selected) {
+    background-color: transparent !important;
+}
+
+
+.formLog {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    z-index: 3;
+
+    .inputLog {
+        margin: 0 2rem;
+        display: flex;
+        flex-direction: column;
+    }
+}

@@ -40,7 +40,7 @@ CulturePopQuiz est une plateforme web interactive qui permet aux utilisateurs de
 
 - **Firebase** : Firebase est utilisé pour stocker et gérer les quiz créés par les utilisateurs, ainsi que pour gérer l'authentification.
 
-- **CSS** : Les styles sont mis en forme à l'aide de CSS pour une interface utilisateur attrayante et conviviale.
+- **SASS** : Les styles sont mis en forme à l'aide de CSS pour une interface utilisateur attrayante et conviviale.
 
 ---
 
