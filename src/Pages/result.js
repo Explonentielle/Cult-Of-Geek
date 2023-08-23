@@ -6,7 +6,7 @@ const Result = () => {
   const location = useLocation();
   const length = location.state ? location.state.length : 'Erreur pendant le chargement du récapitulatif';
   const score = location.state ? location.state.newScore : 'Erreur pendant le chargement du récapitulatif';
-  const rate = (score / length) * 100
+  const rate = Math.round((score / length) * 100)
   return (
       <div className={rate >= 50 ? 'resultWinContainer': 'resultLoseContainer'}>
         <p>{`${score} bonne réponse / ${length} questions`}</p>

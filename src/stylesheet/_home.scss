@@ -1,13 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Nosifer&family=Press+Start+2P&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Gloria+Hallelujah&family=Nosifer&family=Press+Start+2P&family=Sedgwick+Ave+Display&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
 
 .acro {
-  font-size: 5rem;
+  font-size: 4rem;
   text-transform: uppercase;
   text-align: center;
-  font-family: "Nosifer", cursive;
+  line-height: 10rem;
+  font-family: 'Press Start 2P', cursive;
 }
 
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
 @keyframes leg {
   0% {
     transform: translateX(0);

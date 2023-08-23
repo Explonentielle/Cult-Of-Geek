@@ -11,8 +11,13 @@ const Quizz = () => {
   const length = content.length
   const [questionIndex, setQuestionIndex] = useState(0)
   const [score, setScore] = useState(0)
-  
-
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
+  shuffleArray(content)
 
   const answerHandleClick = (value, index) => {
     const allAnswers = document.querySelectorAll('.answers');
@@ -39,7 +44,7 @@ const Quizz = () => {
             navigate(`/Result`, { state: { newScore, length } });
           }
           setScore(newScore);
-        }, 100);
+        }, 300);
       }
     });
   };
