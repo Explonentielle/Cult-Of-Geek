@@ -10,6 +10,7 @@ const Quizz = () => {
   const [score, setScore] = useState(0)
   const [message, setMessage] = useState('');
   const { theme } = useParams()
+  
 
 
   const answerHandleClick = (value, index) => {

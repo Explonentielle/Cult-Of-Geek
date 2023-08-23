@@ -3,6 +3,9 @@ import React from "react";
 const Acceuil = () => {
   return (
     <div className="Container">
+        <div className="icon-home">
+        <img src={`${process.env.PUBLIC_URL}/media/ic.png`} alt="log" />
+      </div>
       <p className="acro">
         Etes-vous un vrai geek ? Mettez vos connaissances à l'epreuve !{" "}
       </p>
