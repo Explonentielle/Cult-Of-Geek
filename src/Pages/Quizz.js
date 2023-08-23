@@ -1,15 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { useParams, useLocation } from 'react-router-dom';
+import { useParams, useLocation, useNavigate } from 'react-router-dom';
 import Card from '../components/Card';
 
 
 const Quizz = () => {
   const location = useLocation();
+  const navigate = useNavigate()
+  const { theme } = useParams()
   const content = location.state ? location.state.content : 'Erreur pendant le chargement du quizz';
+  const length = content.length
   const [questionIndex, setQuestionIndex] = useState(0)
   const [score, setScore] = useState(0)
-  const [message, setMessage] = useState('');
-  const { theme } = useParams()
   
 
 
@@ -18,10 +19,9 @@ const Quizz = () => {
     allAnswers.forEach((answer, i) => {
       if (i === index) {
         let newScore = score;
-        let newMessage = message;
 
         if (value) {
-          if (questionIndex < content.length) {
+          if (questionIndex < length) {
             newScore++
             answer.classList.add('true-answer')
           }
@@ -33,11 +33,10 @@ const Quizz = () => {
         setTimeout(() => {
           answer.classList.remove('true-answer', 'false-answer');
 
-          if (questionIndex < content.length -1) {
+          if (questionIndex < length -1) {
             setQuestionIndex(questionIndex + 1);
           } else {
-            newMessage = `Vous avez obtenu un score de ${newScore}`;
-            setMessage(newMessage);
+            navigate(`/Result`, { state: { newScore, length } });
           }
           setScore(newScore);
         }, 100);
@@ -68,7 +67,6 @@ const Quizz = () => {
         {answersList}
       </div>
       <div className='scoreContainer'>
-        <p>{message}</p>
       </div>
     </div>
   )

@@ -11,7 +11,7 @@
         flex-basis: 45%;
         text-align: center;
 
-        
+
     }
 }
 
@@ -22,7 +22,7 @@
     display: flex;
     justify-content: center;
 
-    .p{
+    .p {
         color: black;
     }
 }
@@ -30,6 +30,41 @@
 .true-answer {
     background-color: green !important;
 }
+
 .false-answer {
     background-color: rgb(255, 0, 0) !important;
+}
+
+.resultWinContainer {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(../../public/media/win.gif);
+    height: 100%;
+    min-height: 87.5vh;
+    padding: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    p{
+        color: white ;
+    }
+}
+
+.resultLoseContainer {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(../../public/media/lose.gif);
+    height: 100%;
+    min-height: 87.5vh;
+    padding: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    p{
+        color: white ;
+    }
 }

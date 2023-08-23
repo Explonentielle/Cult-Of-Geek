@@ -4,6 +4,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import Home from "./Pages/Home"
 import Quizz from "./Pages/Quizz"
+import Result from "./Pages/Result"
 import QuizzCreation from "./Pages/QuizzCreation"
 import About from './Pages/About'
 import Themes from './Pages/Themes'
@@ -22,6 +23,7 @@ const Root = () => {
         <Route exact path="/Selection" element={<Themes />} />
         <Route exact path="/Inscription" element={<SignIn />} />
         <Route exact path="/Quizz/:theme" element={<Quizz />} />
+        <Route exact path="/Result" element={<Result />} />
         <Route exact path="/Crée ton quizz" element={<QuizzCreation />} />
         <Route exact path="/A propos de nous" element={<About />} />
       </Routes>
