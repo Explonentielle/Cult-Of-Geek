@@ -9,7 +9,7 @@ const Quizz = () => {
   const [score, setScore] = useState(0)
   const { theme } = useParams()
   const location = useLocation();
-  const answerRef = useRef()
+  // const answerRef = useRef()
   let message = ""
 
 

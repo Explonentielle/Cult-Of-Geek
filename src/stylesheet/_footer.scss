@@ -1,9 +1,47 @@
-footer{
-    
-
-    h1{
-        font-size: 15rem;
+.Footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f0f0f0;
+  
+    .logo-left,
+    .logo-right {
+      img {
+        width: 10vh; 
+        height: auto;
+        transition: transform 0.5s ease;
+      }
     }
-    
-}
-
+  
+    .social-icons {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      margin: 0 20px;
+  
+      a {
+        margin-bottom: 45px;
+        img {
+          width: 35px;
+          height: 35px;
+          transition: transform 0.5s ease; 
+         
+        }
+      }
+    }
+  
+    &:hover {
+      .logo-left,
+      .logo-right {
+        img {
+          transform: rotate(360deg); 
+        }
+      }
+    }
+  
+    h1{
+      font-size: 16px;
+      margin: 0;
+    }
+  }
+  

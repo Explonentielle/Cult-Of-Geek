@@ -16,12 +16,14 @@
 }
 
 .Container {
-    background-color:rgb(254, 247, 231);
+    background-color: rgb(183, 141, 42);
     height: 100%;
-    min-height: 100vh;
-    padding: 10rem;
-
+    min-height: 89.5vh;
+    padding: 10rem; 
+  
     @media screen and (min-width: 1440px) {
-        padding: 20rem;
+      padding: 10rem; 
     }
-}
+  }
+  
+

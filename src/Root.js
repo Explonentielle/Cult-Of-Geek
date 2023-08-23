@@ -16,7 +16,7 @@ const Root = () => {
   emailjs.init('ukK4nOqVQx9KqkBHP');
   return (
     <BrowserRouter>
-      <Header logo={process.env.PUBLIC_URL + 'media/logo.png'} className={'header'} />
+      <Header logo={process.env.PUBLIC_URL + 'media/log.png'} className={'header'} />
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/Selection" element={<Themes />} />
