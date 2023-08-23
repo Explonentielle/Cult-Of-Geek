@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Nosifer&family=Press+Start+2P&family=Sedgwick+Ave+Display&display=swap');
 
 .header {
     background-color:rgb(255, 252, 249);
@@ -27,6 +27,8 @@
                 p{
                     font-size: 2rem;
                     font-weight: 900;
+                    
+                    
 
                     @media screen and (max-width: 1440px) {
                         font-size: 1.2rem;
@@ -38,9 +40,9 @@
 }
 
 .OpenMenu {
-    font-size: 5rem;
+    font-size: 6rem;
     font-weight: 900;
-    background-color:  rgba(0, 0, 0, 0.8);
+    background-color:  rgba(74, 128, 181, 0.7);
     height: 100vh;
     width: 100vw;
     position: absolute;
@@ -54,8 +56,11 @@
 
     p{
         color: white !important;
+        font-family: 'Sedgwick Ave Display', cursive;
     }
 }
+
+
 
 .hidden {
     display: none;
@@ -110,3 +115,20 @@
         flex-direction: column;
     }
 }
+
+.menu-item-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+  
+    .menu-icon {
+      width: 10vh; 
+      height: 10vh;
+      margin-right: 15px; 
+    }
+  
+    p {
+      margin: 0;
+    }
+  }
+  
