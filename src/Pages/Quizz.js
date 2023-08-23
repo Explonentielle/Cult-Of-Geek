@@ -60,7 +60,7 @@ const Quizz = () => {
 
   return (
     <div className="Container">
-      <h2>mon Quizz theme {theme}</h2>
+      <h2>Quizz {theme}</h2>
       <p>question n° {questionIndex + 1} :</p>
       <p>{content[questionIndex].question}</p>
 

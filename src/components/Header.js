@@ -53,7 +53,7 @@ const Header = ({ logo, className }) => {
             <Menu.Item key="/Crée ton quizz" onClick={handleMenuItemClick}>
             <div className="menu-item-content">
               <img className="menu-icon" src={`${process.env.PUBLIC_URL}/media/riu.png`} alt="Accueil" />
-              <p>Crée ton Quizz</p>
+              <p>Cree ton Quizz</p>
               </div>
             </Menu.Item>
             <Menu.Item key="/A propos de nous" onClick={handleMenuItemClick}>
