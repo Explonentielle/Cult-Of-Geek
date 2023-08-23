@@ -37,12 +37,14 @@
 }
 
 .OpenMenu {
+    margin: 20vw;
     color: rgb(0, 0, 0);
     font-size: 5rem;
     font-weight: 900;
-    background-color:  rgba(255, 255, 255, 0.4);
-    height: 100vh;
-    width: 100vw;
+    background-color:  rgba(217, 229, 142, 0.862);
+    border-radius: 5rem;
+    height: 60vh;
+    width: 60vw;
     position: absolute;
     top: 0;
     right: 0;

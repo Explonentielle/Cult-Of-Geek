@@ -16,16 +16,20 @@
 }
 
 
-.submitBtnContainer {
+.scoreContainer {
     margin: 3rem 0;
     width: 100%;
     display: flex;
     justify-content: center;
 
-    .submitBtn{
-        background-color:rgb(192, 224, 111);
-        border-radius: 3rem;
-        width: 20%;
-        padding: 2rem;
+    .p{
+        color: black;
     }
+}
+
+.true-answer {
+    background-color: green !important;
+}
+.false-answer {
+    background-color: rgb(255, 0, 0) !important;
 }

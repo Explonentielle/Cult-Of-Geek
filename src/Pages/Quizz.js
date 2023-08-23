@@ -1,52 +1,58 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useParams, useLocation } from 'react-router-dom';
 import Card from '../components/Card';
 
 
 const Quizz = () => {
-  const [questionIndex, setQuestionIndex] = useState(0)
-  const [answers, setAnswers] = useState(null)
-  const [score, setScore] = useState(0)
-  const { theme } = useParams()
   const location = useLocation();
-  const answerRef = useRef()
-  let message = ""
-
-
-  const nextAnswer = () => {
-    if (questionIndex < content.length - 1) {
-      setQuestionIndex(questionIndex + 1)
-      message = ""
-    }
-  }
-
-  const answerSubmit = () => {
-    console.log(answers)
-    if (answers) {
-      setScore(score + 1)
-      message = "bonne réponse"
-      setAnswers(null)
-    }
-    else if (!answers) {
-      message = "mauvaise réponse"
-      setAnswers(null)
-    }
-  }
-
-  const answerHandleClick = (value) => {
-    setAnswers(value)
-
-  }
-
   const content = location.state ? location.state.content : 'Erreur pendant le chargement du quizz';
+  const [questionIndex, setQuestionIndex] = useState(0)
+  const [score, setScore] = useState(0)
+  const [message, setMessage] = useState('');
+  const { theme } = useParams()
+
+
+  const answerHandleClick = (value, index) => {
+    const allAnswers = document.querySelectorAll('.answers');
+    allAnswers.forEach((answer, i) => {
+      if (i === index) {
+        let newScore = score;
+        let newMessage = message;
+
+        if (value) {
+          if (questionIndex < content.length) {
+            newScore++
+            answer.classList.add('true-answer')
+          }
+        }
+        else {
+          answer.classList.add('false-answer');
+        }
+
+        setTimeout(() => {
+          answer.classList.remove('true-answer', 'false-answer');
+
+          if (questionIndex < content.length -1) {
+            setQuestionIndex(questionIndex + 1);
+          } else {
+            newMessage = `Vous avez obtenu un score de ${newScore}`;
+            setMessage(newMessage);
+          }
+          setScore(newScore);
+        }, 100);
+      }
+    });
+  };
+
+  
+
   const answersList = content[questionIndex].answers.map((item, index) => {
     return (
       <Card
-
         key={index + Date.now}
-        action={() => answerHandleClick(item.correct)}
+        action={() => answerHandleClick(item.correct, index)}
         title={item.text}
-        className={"answers"}
+        className={`answers answers${index}`}
       />
     )
   })
@@ -60,13 +66,7 @@ const Quizz = () => {
       <div className='answersContainer' >
         {answersList}
       </div>
-      <div className='submitBtnContainer'>
-        <button onClick={answerSubmit} className='submitBtn'>
-          valier
-        </button>
-        <button onClick={nextAnswer} className='submitBtn'>
-          suivant
-        </button>
+      <div className='scoreContainer'>
         <p>{message}</p>
       </div>
     </div>

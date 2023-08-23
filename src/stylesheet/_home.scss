@@ -32,15 +32,15 @@
 }
 @keyframes move {
   0% {
-    transform: translateX(0);
+    transform: translateX(-300px);
   }
 
   50% {
-    transform: translateX(500px);
+    transform: translateX(600px);
   }
 
   100% {
-    transform: translateX(0);
+    transform: translateX(-300px);
   }
 }
 @keyframes colorChange {
@@ -121,19 +121,19 @@
   height: 29px;
   width: 29px;
   display: inline-block;
-  animation: move 5s linear 2s infinite;
+  animation: move 5s linear  infinite;
 }
 .pac-man-move-container {
   margin-left: 30px;
   display: inline-block;
-  animation: move 5s linear 2s infinite;
+  animation: move 5s linear  infinite;
 }
 
 .pac-man-container {
   height: 30px;
   width: 30px;
   display: inline-block;
-  animation: spin 5s cubic-bezier(1, 0.05, 1, -0.32) 2s infinite;
+  animation: spin 5s cubic-bezier(1, 0.05, 1, -0.32)  infinite;
 }
 
 .pac-man-top,
@@ -145,13 +145,13 @@
 
 .pac-man-top {
   border-bottom-color: transparent;
-  animation: topChomp 0.3s linear 2s infinite;
+  animation: topChomp 0.3s linear  infinite;
 }
 
 .pac-man-bottom {
   margin-top: -100%;
   border-top-color: transparent;
-  animation: bottomChomp 0.3s linear 2s infinite;
+  animation: bottomChomp 0.3s linear  infinite;
 }
 
 .red .ghost-body,
@@ -177,7 +177,7 @@
 .ghost-body {
   height: 70%;
   border-radius: 100% 100% 0 0;
-  animation: colorChange 5s cubic-bezier(1, 0.05, 1, -0.32) 2s infinite;
+  animation: colorChange 5s cubic-bezier(1, 0.05, 1, -0.32)  infinite;
 }
 
 .ghost-legs-container {
@@ -193,7 +193,7 @@
   display: inline-block;
   border-radius: 0 0 50% 50%;
   animation: leg 0.8s linear 2s infinite,
-    colorChange 5s cubic-bezier(1, 0.05, 1, -0.32) 2s infinite;
+    colorChange 5s cubic-bezier(1, 0.05, 1, -0.32)  infinite;
 }
 
 .eyes-container {
@@ -224,5 +224,5 @@
   height: 70%;
   width: 70%;
   border-radius: 50%;
-  animation: pupil 5s linear 2s infinite;
+  animation: pupil 5s linear  infinite;
 }
