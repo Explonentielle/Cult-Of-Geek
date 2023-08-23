@@ -9,6 +9,7 @@ const Quizz = () => {
   const [score, setScore] = useState(0)
   const { theme } = useParams()
   const location = useLocation();
+  const answerRef = useRef()
   let message = ""
 
 
@@ -34,12 +35,14 @@ const Quizz = () => {
 
   const answerHandleClick = (value) => {
     setAnswers(value)
+
   }
 
   const content = location.state ? location.state.content : 'Erreur pendant le chargement du quizz';
   const answersList = content[questionIndex].answers.map((item, index) => {
     return (
       <Card
+
         key={index + Date.now}
         action={() => answerHandleClick(item.correct)}
         title={item.text}
