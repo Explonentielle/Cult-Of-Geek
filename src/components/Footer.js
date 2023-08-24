@@ -4,7 +4,7 @@ const Footer = ({ copyright, className }) => {
   return (
     <div className={`Footer ${className}`}>
       <div className="logo-left">
-        <img src={`${process.env.PUBLIC_URL}/media/log.png`} alt="Logo Left" />
+        <img src={`${process.env.PUBLIC_URL}/media/LogoChienSeul.png`} alt="Logo Left" />
       </div>
       <div  className='footerContainer'>
         <div className="social-icons">
@@ -21,7 +21,7 @@ const Footer = ({ copyright, className }) => {
         <h1 className="copyright-text">&copy; Copyrigth 2023 CultOfGeek.com</h1>
       </div>
       <div className="logo-right">
-        <img src={`${process.env.PUBLIC_URL}/media/log.png`} alt="Logo Right" />
+        <img src={`${process.env.PUBLIC_URL}/media/LogoChienSeul.png`} alt="Logo Right" />
       </div>
     </div>
   );

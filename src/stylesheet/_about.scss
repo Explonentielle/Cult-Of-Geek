@@ -1,0 +1,31 @@
+.container{
+    padding-top: 20rem;
+    text-align: center;
+}
+
+label{
+    margin: 2rem;
+    font-size: 2rem;
+}
+
+input{
+    background-color: antiquewhite;
+    border: 5px solid black;
+    border-radius: 1rem;
+    margin: 2rem 0;
+    font: black;
+}
+
+select{
+    background-color: bisque;
+    outline: 5px solid black;
+    border-radius: 1rem;
+    margin: 2rem 0;
+}
+
+textarea{
+    background-color: antiquewhite;
+    border: 5px solid black;
+    border-radius: 1rem;
+    margin: 2rem 0;
+}

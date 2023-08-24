@@ -10,7 +10,7 @@
         margin: 2vh;
         width: 8vh; 
         height: auto;
-        transition: transform 0.5s ease;
+        transition: transform 1s ease;
       }
     }
   
@@ -19,14 +19,14 @@
       flex-direction: row;
       align-items: flex-start;
       margin: 0 20px;
-  
+ 
       a {
         margin-bottom: 45px;
         margin: 0 2rem;
         img {
           width: 35px;
           height: 35px;
-          transition: transform 0.5s ease; 
+          transition: transform 10s ease; 
          
         }
       }
