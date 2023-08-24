@@ -7,7 +7,6 @@ const Themes = () => {
   const navigate = useNavigate();
 
   const handleClick = (value, content) => {
-    console.log(value);
     navigate(`/Quizz/${value}`, { state: { content } });
   };
 

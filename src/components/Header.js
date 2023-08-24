@@ -21,7 +21,7 @@ const Header = ({ logo, className }) => {
 
   return (
       <header className={className}>
-      <img onClick={() => navigate("/")} className='logo' src={logo} alt="" />
+      <img onClick={() => navigate("/")} className='logo' src={process.env.PUBLIC_URL + 'media/log.png'}alt="" />
         <div className='menuContainer'>
 
           <LoginBar className={isMenuOpen ? '': 'hidden'}/>
@@ -35,7 +35,7 @@ const Header = ({ logo, className }) => {
             <Menu.Item key="/" onClick={handleMenuItemClick}>
             <div className="menu-item-content">
               <img className="menu-icon" src={`${process.env.PUBLIC_URL}/media/michelangelo.png`} alt="Accueil" />
-              <p>Acceuil</p>
+              <p>Accueil</p>
             </div>
             </Menu.Item>
             <Menu.Item key="/Inscription" onClick={handleMenuItemClick}>

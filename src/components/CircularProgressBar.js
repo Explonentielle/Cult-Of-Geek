@@ -11,7 +11,7 @@ const CircularProgressBar = ({ percentage }) => {
   }
     return (
         <div className='progessContainer'>
-          <Progress type="circle" trailColor={'white'} percent={percentage} strokeColor={color} />
+          <Progress type="circle" trailColor={'white'} percent={percentage} strokeColor={color}  textStyle={{ color: 'white' }} />
         </div>
       );
 }
