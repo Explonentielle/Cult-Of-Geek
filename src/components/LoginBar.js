@@ -9,10 +9,6 @@ const LoginBar = ({ className }) => {
 
     useEffect(() => {
         setLog(isAuthenticated()); 
-        // if (!log) {
-        //     setEmail('');
-        //     setPassword('');
-        // }
     }, [log]);
 
     const handleLogin = async (e) => {
