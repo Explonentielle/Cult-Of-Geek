@@ -15,66 +15,72 @@ const Header = ({ logo, className }) => {
   };
 
   const handleMenuItemClick = (key) => {
-    if (window.innerWidth <= 8000) { setIsMenuOpen(!isMenuOpen)}
+    if (window.innerWidth <= 8000) { setIsMenuOpen(!isMenuOpen) }
     navigate(key.key)
   };
 
   return (
-      <header className={className}>
-      <img onClick={() => navigate("/")} className='logo' src={process.env.PUBLIC_URL + 'media/log.png'}alt="" />
-        <div className='menuContainer'>
+    <header className={className}>
+      <img onClick={() => navigate("/")} className='logo' src={process.env.PUBLIC_URL + 'media/log.png'} alt="" />
+      <div className='menuContainer'>
 
-          <LoginBar className={isMenuOpen ? '': 'hidden'}/>
-           
-          <Menu
-            className={isMenuOpen ? 'OpenMenu' : window.innerWidth <= 8000 ? 'hidden' : 'menu'}
-            mode={window.innerWidth <= 8000 ? 'verticale' : 'horizontal'}
-            ref={menuRef}
-          >
-        
-            <Menu.Item key="/" onClick={handleMenuItemClick}>
+        {/* <LoginBar className={isMenuOpen ? 'visible' : 'hidden'} /> */}
+
+        <Menu
+          className={isMenuOpen ? 'OpenMenu' : window.innerWidth <= 8000 ? 'hidden' : 'menu'}
+          mode={window.innerWidth <= 8000 ? 'verticale' : 'horizontal'}
+          ref={menuRef}
+        >
+
+          <Menu.Item key="/" onClick={handleMenuItemClick}>
             <div className="menu-item-content">
               <img className="menu-icon" src={`${process.env.PUBLIC_URL}/media/michelangelo.png`} alt="Accueil" />
               <p>Accueil</p>
             </div>
-            </Menu.Item>
-            <Menu.Item key="/Inscription" onClick={handleMenuItemClick}>
+          </Menu.Item>
+          <Menu.Item key="/Inscription" onClick={handleMenuItemClick}>
             <div className="menu-item-content">
               <img className="menu-icon" src={`${process.env.PUBLIC_URL}/media/scream.png`} alt="Accueil" />
               <p>S'inscrire</p>
-              </div>
-            </Menu.Item>
-            <Menu.Item key="/Selection" onClick={handleMenuItemClick}>
+            </div>
+          </Menu.Item>
+          <Menu.Item key="/Selection" onClick={handleMenuItemClick}>
             <div className="menu-item-content">
               <img className="menu-icon" src={`${process.env.PUBLIC_URL}/media/potter.png`} alt="Accueil" />
               <p>Themes</p>
-              </div>
-            </Menu.Item>
-            <Menu.Item key="/Crée ton quizz" onClick={handleMenuItemClick}>
+            </div>
+          </Menu.Item>
+          <Menu.Item key="/Crée ton quizz" onClick={handleMenuItemClick}>
             <div className="menu-item-content">
               <img className="menu-icon" src={`${process.env.PUBLIC_URL}/media/riu.png`} alt="Accueil" />
               <p>Cree ton Quizz</p>
-              </div>
-            </Menu.Item>
-            <Menu.Item key="/A propos de nous" onClick={handleMenuItemClick}>
+            </div>
+          </Menu.Item>
+          <Menu.Item key="/Mon compte" onClick={handleMenuItemClick}>
+            <div className="menu-item-content">
+              <img className="menu-icon" src={`${process.env.PUBLIC_URL}/media/razmo.png`} alt="Accueil" />
+              <p>Mon compte</p>
+            </div>
+          </Menu.Item>
+          <Menu.Item key="/A propos de nous" onClick={handleMenuItemClick}>
             <div className="menu-item-content">
               <img className="menu-icon" src={`${process.env.PUBLIC_URL}/media/razmo.png`} alt="Accueil" />
               <p>A Propos de Nous</p>
-              </div>
-            </Menu.Item>
-          </Menu>
-
-          {window.innerWidth <= 8000 ? (
-            <div onClick={toggleMenu} className="burgerContainer">
-              <img
-                className="burger"
-                src={`${process.env.PUBLIC_URL}/media/iconBurger.png`}
-              />
-              <p className='burgerMenu'>Menu</p>
             </div>
-          ) : null}
+          </Menu.Item>
+        </Menu>
+
+
+        <div onClick={toggleMenu} className="burgerContainer">
+          <img
+            className="burger"
+            src={`${process.env.PUBLIC_URL}/media/iconBurger.png`}
+          />
+          <p className='burgerMenu'>Menu</p>
         </div>
-      </header>
+
+      </div>
+    </header>
   );
 };
 

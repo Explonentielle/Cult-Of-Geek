@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Gloria+Hallelujah&family=Nosifer&family=Press+Start+2P&family=Sedgwick+Ave+Display&display=swap');
+
+
+.registerContainer{
+    display: flex;
+    flex-direction: column;
+    align-items:center ;
+
+    .registerForm {
+        justify-content: space-between;
+        display: flex;
+        flex-wrap: wrap;
+    
+        div{
+            margin: 3rem;
+            flex-basis: 40%;
+            display: flex;
+            flex-direction: column;
+
+            @media screen and (max-width: 426px) {
+                flex-basis: 100%;
+            }
+
+            label {
+                margin: 1rem;
+                font-family: 'Press Start 2P', cursive;
+            }
+            input {
+                height: 5vh;
+            }
+        }
+    }
+}
+
+
+
+.registerButton {
+    background-color: #2a2a00;
+    color: #ffffff; 
+    border: none;
+    padding: 10px 20px;
+    font-family: 'Press Start 2P', cursive; 
+    font-size: 16px; 
+    cursor: pointer;
+    border-radius: 4px;
+    text-transform: uppercase; 
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; 
+    box-shadow:5px 5px 5px rgba(0, 0, 0, 0.4);
+}
+
+.registerButton:hover {
+    background-color: #ff6b00; 
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6); 
+  }

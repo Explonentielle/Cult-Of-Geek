@@ -8,8 +8,10 @@ import Result from "./Pages/Result"
 import QuizzCreation from "./Pages/QuizzCreation"
 import About from './Pages/About'
 import Themes from './Pages/Themes'
-import SignIn from './Pages/SignIn'
+import Register from './Pages/Register'
 import emailjs from 'emailjs-com';
+import Account from './Pages/Account'
+
 
 
 
@@ -21,10 +23,11 @@ const Root = () => {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/Selection" element={<Themes />} />
-        <Route exact path="/Inscription" element={<SignIn />} />
+        <Route exact path="/Inscription" element={<Register />} />
         <Route exact path="/Quizz/:theme" element={<Quizz />} />
         <Route exact path="/Result" element={<Result />} />
         <Route exact path="/Crée ton quizz" element={<QuizzCreation />} />
+        <Route exact path="/Mon compte" element={<Account />} />
         <Route exact path="/A propos de nous" element={<About />} />
       </Routes>
       <Footer />

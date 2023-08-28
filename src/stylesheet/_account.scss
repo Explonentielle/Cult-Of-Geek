@@ -1,0 +1,32 @@
+.accountContainer {
+    display: flex;
+    flex-wrap: wrap;
+
+    .personalDataContainer {
+        font-size: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        flex-basis: 50%;
+
+        div {
+            display: flex;
+        }
+    }
+
+
+    .personalQuizzContainer {
+        flex-basis: 50%;
+    
+        .quizzcontainer {
+            display: flex;
+            flex-wrap: wrap;
+
+            div {
+                border-radius: 3rem;
+                background-color: lightblue;
+                flex-basis: 45%;
+                margin: 1rem;
+            }
+        }
+    }
+}

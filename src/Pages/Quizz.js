@@ -3,6 +3,10 @@ import { useParams, useLocation, useNavigate } from 'react-router-dom';
 import Card from '../components/Card';
 
 
+
+// regler le probleme des question random qui se repete du cout split l'index de la question une fois sortie important
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 const Quizz = () => {
   const location = useLocation();
   const navigate = useNavigate()
@@ -64,7 +68,7 @@ const Quizz = () => {
 
   return (
     <div className="Container">
-      <h2>Quizz {theme}</h2>
+      <h3>Quizz {theme}</h3>
       <p>question n° {questionIndex + 1} :</p>
       <p>{content[questionIndex].question}</p>
 

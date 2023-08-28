@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { MdClose } from 'react-icons/md';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
-const LoginBar = ({ className }) => {
+const LoginBar = ({ className, onLoginSuccess }) => {
+    const navigate = useNavigate()
     const [log, setLog] = useState(isAuthenticated());
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     useEffect(() => {
-        setLog(isAuthenticated()); 
+        setLog(isAuthenticated());
     }, [log]);
 
     const handleLogin = async (e) => {
@@ -19,10 +21,13 @@ const LoginBar = ({ className }) => {
                 password
             });
             localStorage.setItem('token', response.data.token);
+            localStorage.setItem('user', JSON.stringify(response.data.user));
             setLog(true);
+            navigate('/Mon compte')
         } catch (error) {
             console.error(error);
         }
+
     };
 
     function isAuthenticated() {
@@ -34,7 +39,9 @@ const LoginBar = ({ className }) => {
         setEmail('');
         setPassword('');
         localStorage.removeItem('token');
-        setLog(false); 
+        localStorage.removeItem('user');
+        setLog(false);
+        navigate('/Mon compte')
     }
 
     return (
@@ -45,23 +52,25 @@ const LoginBar = ({ className }) => {
                 </button>
                 :
                 <form className='formLog' action="">
-                    <div className='inputLog'>
-                        <label htmlFor="">E mail :</label>
-                        <input type="text"
-                            placeholder="E-mail"
-                            onChange={e => setEmail(e.target.value)}
-                            defaultValue={email} />
-                    </div>
-                    <div className='inputLog'>
-                        <label htmlFor="">Mot de passe</label>
-                        <input type="text"
-                            placeholder="Mot de passe"
-                            defaultValue={password}
-                            onChange={e => setPassword(e.target.value)} />
+                    <div className='inputContainer'>
+                        <div className='inputLog'>
+                            <label htmlFor="">E mail :</label>
+                            <input type="text"
+                                placeholder="E-mail"
+                                onChange={e => setEmail(e.target.value)}
+                                defaultValue={email} />
+                        </div>
+                        <div className='inputLog'>
+                            <label htmlFor="">Mot de passe</label>
+                            <input type="text"
+                                placeholder="Mot de passe"
+                                defaultValue={password}
+                                onChange={e => setPassword(e.target.value)} />
+                        </div>
                     </div>
                     <button type='submit' className='connexionBtn' onClick={handleLogin}>Connexion</button>
                 </form>
-                
+
             }
         </div>
     )
