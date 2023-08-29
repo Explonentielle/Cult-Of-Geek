@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import { FaSignInAlt } from 'react-icons/fa'
 
 const Register = () => {
 
@@ -99,7 +100,9 @@ const Register = () => {
             />
           </div>
         </div>
-        <button className='registerButton' type="submit">S'inscrire</button>
+        <button type='submit' className='registerButton' >
+          <FaSignInAlt className='icon-white' /> s'inscrire
+        </button>
       </form>
     </div>
   )

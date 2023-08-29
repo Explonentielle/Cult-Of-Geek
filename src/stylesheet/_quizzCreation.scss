@@ -1,0 +1,25 @@
+.quizzCreation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.registerButton {
+    background-color: #2a2a00;
+    color: #ffffff; 
+    border: none;
+    padding: 10px 20px;
+    font-family: 'Press Start 2P', cursive; 
+    font-size: 16px; 
+    cursor: pointer;
+    border-radius: 4px;
+    text-transform: uppercase; 
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; 
+    box-shadow:5px 5px 5px rgba(0, 0, 0, 0.4);
+}
+
+.registerButton:hover {
+    background-color: #ff6b00; 
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6); 
+  }

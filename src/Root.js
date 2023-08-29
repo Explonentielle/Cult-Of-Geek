@@ -26,9 +26,9 @@ const Root = () => {
         <Route exact path="/Inscription" element={<Register />} />
         <Route exact path="/Quizz/:theme" element={<Quizz />} />
         <Route exact path="/Result" element={<Result />} />
-        <Route exact path="/Crée ton quizz" element={<QuizzCreation />} />
-        <Route exact path="/Mon compte" element={<Account />} />
-        <Route exact path="/A propos de nous" element={<About />} />
+        <Route exact path="/Cree-ton-quizz" element={<QuizzCreation />} />
+        <Route exact path="/Mon-compte" element={<Account />} />
+        <Route exact path="/A-propos-de-nous" element={<About />} />
       </Routes>
       <Footer />
     </BrowserRouter>

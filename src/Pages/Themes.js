@@ -6,7 +6,15 @@ import Data from "../data/answers";
 const Themes = () => {
   const navigate = useNavigate();
 
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
+
   const handleClick = (value, content) => {
+    shuffleArray(content)
     navigate(`/Quizz/${value}`, { state: { content } });
   };
 

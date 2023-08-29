@@ -2,11 +2,6 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useParams, useLocation, useNavigate } from 'react-router-dom';
 import Card from '../components/Card';
 
-
-
-// regler le probleme des question random qui se repete du cout split l'index de la question une fois sortie important
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
 const Quizz = () => {
   const location = useLocation();
   const navigate = useNavigate()
@@ -15,13 +10,6 @@ const Quizz = () => {
   const length = content.length
   const [questionIndex, setQuestionIndex] = useState(0)
   const [score, setScore] = useState(0)
-  function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
-  }
-  shuffleArray(content)
 
   const answerHandleClick = (value, index) => {
     const allAnswers = document.querySelectorAll('.answers');
@@ -42,18 +30,18 @@ const Quizz = () => {
         setTimeout(() => {
           answer.classList.remove('true-answer', 'false-answer');
 
-          if (questionIndex < length -1) {
+          if (questionIndex < length - 1) {
             setQuestionIndex(questionIndex + 1);
           } else {
             navigate(`/Result`, { state: { newScore, length } });
           }
           setScore(newScore);
-        }, 300);
+        }, 200);
       }
     });
   };
 
-  
+
 
   const answersList = content[questionIndex].answers.map((item, index) => {
     return (

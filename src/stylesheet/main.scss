@@ -9,17 +9,19 @@
 @import "about";
 @import "register";
 @import "account";
+@import "quizzCreation";
 @import url('https://fonts.googleapis.com/css2?family=REM:wght@100&display=swap');
 
 
 
 * {
   list-style-type: none;
-  color: black;
+  
   font-family: 'REM', sans-serif;
 }
 
 .Container {
+  color: black;
   width: 100%;
   background-color: rgb(183, 141, 42);
   height: 100%;

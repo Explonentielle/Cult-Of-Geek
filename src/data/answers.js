@@ -2,6 +2,7 @@ const data = [
   {
     //////////////////////////// Cartoon
     title : "Cartoons",
+    theme: "Cartoons",
     content: [
       {
         id: 1,
@@ -111,6 +112,7 @@ const data = [
 
   {
     title : "Movies",
+    theme: "Movies",
     content: [
       {
         id: 1,
@@ -239,6 +241,7 @@ const data = [
 
   {
     title : "Series",
+    theme: "Series",
     content: [
       {
         id: 1,
@@ -347,6 +350,7 @@ const data = [
 
   {
     title : "VideoGame",
+    theme: "VideoGame",
     content: [
       {
         id: 1,
@@ -455,6 +459,7 @@ const data = [
 
   {
     title: "general",
+    theme: "general",
     content: [
       {
         id: 1,

@@ -1,8 +1,23 @@
 import React, { useEffect, useState } from 'react'
 import LoginBar from '../components/LoginBar';
+import { useNavigate } from 'react-router-dom';
+import { FaSignInAlt } from 'react-icons/fa'
 
 const Account = () => {
     const [userData, setUserData] = useState(null);
+    const navigate = useNavigate()
+
+    const handleSignIn = () => {
+        navigate("/Inscription")
+    }
+
+    const handleLoginSuccess = (user) => {
+        setUserData(user);
+    };
+
+    const handleLogoutSuccess = () => {
+        setUserData(null);
+    };
 
     useEffect(() => {
         const user = JSON.parse(localStorage.getItem('user'));
@@ -37,7 +52,7 @@ const Account = () => {
                         </div>
                         <div>
                             <p>mot de passe : </p>
-                            <input type="button" value="Modifier mon Mot de passe" />
+                            <input type="button" className='changePassword' value="Modifier mon Mot de passe" />
                         </div>
                     </div>
                     <div className='personalQuizzContainer'>
@@ -57,12 +72,24 @@ const Account = () => {
                             </div>
                         </div>
                     </div>
-                    <LoginBar className= 'visible' onLoginSuccess={handleLoginSuccess} />
+                    <LoginBar
+                        className='loginBar'
+                        onLoginSuccess={handleLoginSuccess} 
+                        onLogoutSuccess={handleLogoutSuccess} />
+                        
                 </div>
-                : 
-                <div>
+                :
+                <div className='loginBarContainer'>
                     <p>Connectez vous pour acceder a votre Compte</p>
-                    <LoginBar className= 'visible' onLoginSuccess={handleLoginSuccess} />
+                    <LoginBar
+                        className='loginBar'
+                        onLoginSuccess={handleLoginSuccess}
+                        onLogoutSuccess={handleLogoutSuccess}
+                    />
+                    <p>je n'ai pas encore de compte</p>
+                    <button className='registerButton' onClick={handleSignIn}>
+                        <FaSignInAlt className='icon-white' /> s'inscrire
+                    </button>
                 </div>
             }
         </div>

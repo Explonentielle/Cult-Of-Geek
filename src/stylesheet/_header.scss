@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Gloria+Hallelujah&family=Nosifer&family=Press+Start+2P&family=Sedgwick+Ave+Display&display=swap');
 
 .header {
+    color: black;
     background-color: rgb(255, 252, 249);
     display: flex;
     align-items: center;
@@ -71,20 +72,7 @@
     display: none;
 }
 
-.visible {
 
-    @media screen and (max-width: 1020px) {
-        position: absolute;
-        left: 0vh;
-    }
-
-    @media screen and (max-width: 766px) {
-        position: absolute;
-        left: 5vh;
-        top: 12vh;
-    }
-
-}
 
 .burgerContainer {
     z-index: 3;
@@ -132,24 +120,8 @@
     background-color: transparent !important;
 }
 
-
-.formLog {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    z-index: 3;
-    align-items: center;
-    margin: 0 3rem;
-
-
-    .inputLog {
-        margin: 0 2rem;
-        display: flex;
-        flex-direction: column;
-    }
-}
-
 .menu-item-content {
+    height: 10vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -165,11 +137,70 @@
     }
 }
 
+
+////////////////////////////////////////////
+
+
 .déconnexion {
-    z-index: 3;
-    position: relative;
+    background-color: #2a2a00;
+    color: #ffffff; 
+    border: none;
+    padding: 10px 20px;
+    font-family: 'Press Start 2P', cursive; 
+    font-size: 16px; 
+    cursor: pointer;
+    border-radius: 4px;
+    text-transform: uppercase; 
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; 
+    box-shadow:5px 5px 5px rgba(0, 0, 0, 0.4);
 }
+.déconnexion:hover {
+    background-color: #ff6b00; 
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6); 
+  }
 
 .connexionBtn {
-    height: 5rem;
+    background-color: #2a2a00;
+    color: #ffffff; 
+    border: none;
+    padding: 10px 20px;
+    font-family: 'Press Start 2P', cursive; 
+    font-size: 16px; 
+    cursor: pointer;
+    border-radius: 4px;
+    text-transform: uppercase; 
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; 
+    box-shadow:5px 5px 5px rgba(0, 0, 0, 0.4);
+    margin: 2rem;
+}
+.connexionBtn:hover {
+    background-color: #ff6b00; 
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6); 
+  }
+
+
+.formLog {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    z-index: 3;
+    margin: 0 3rem;
+
+
+    .inputLog {
+        margin: 0 2rem;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.loginBarContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loginBar {
+    margin: 2rem 0;
 }

@@ -3,7 +3,7 @@ import { MdClose } from 'react-icons/md';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-const LoginBar = ({ className, onLoginSuccess }) => {
+const LoginBar = ({ className, onLoginSuccess, onLogoutSuccess  }) => {
     const navigate = useNavigate()
     const [log, setLog] = useState(isAuthenticated());
     const [email, setEmail] = useState('');
@@ -23,7 +23,7 @@ const LoginBar = ({ className, onLoginSuccess }) => {
             localStorage.setItem('token', response.data.token);
             localStorage.setItem('user', JSON.stringify(response.data.user));
             setLog(true);
-            navigate('/Mon compte')
+            onLoginSuccess(response.data.user)
         } catch (error) {
             console.error(error);
         }
@@ -32,23 +32,24 @@ const LoginBar = ({ className, onLoginSuccess }) => {
 
     function isAuthenticated() {
         const token = localStorage.getItem('token');
-        return token !== null;
+        const user = localStorage.getItem('user');
+        return (token !== null && user !== null);
     }
 
     function handleLogout() {
+        onLogoutSuccess()
         setEmail('');
         setPassword('');
         localStorage.removeItem('token');
         localStorage.removeItem('user');
         setLog(false);
-        navigate('/Mon compte')
     }
 
     return (
         <div className={className} >
             {log ?
                 <button className='déconnexion' onClick={handleLogout}>
-                    <MdClose /> Déconnexion
+                    <MdClose className='icon-white' /> Deconnexion
                 </button>
                 :
                 <form className='formLog' action="">

@@ -34,37 +34,37 @@ const Header = ({ logo, className }) => {
 
           <Menu.Item key="/" onClick={handleMenuItemClick}>
             <div className="menu-item-content">
-              <img className="menu-icon" src={`${process.env.PUBLIC_URL}/media/michelangelo.png`} alt="Accueil" />
+              {/* <img className="menu-icon" src={`${process.env.PUBLIC_URL}/media/michelangelo.png`} alt="Accueil" /> */}
               <p>Accueil</p>
             </div>
           </Menu.Item>
           <Menu.Item key="/Inscription" onClick={handleMenuItemClick}>
             <div className="menu-item-content">
-              <img className="menu-icon" src={`${process.env.PUBLIC_URL}/media/scream.png`} alt="Accueil" />
+              {/* <img className="menu-icon" src={`${process.env.PUBLIC_URL}/media/scream.png`} alt="Accueil" /> */}
               <p>S'inscrire</p>
             </div>
           </Menu.Item>
           <Menu.Item key="/Selection" onClick={handleMenuItemClick}>
             <div className="menu-item-content">
-              <img className="menu-icon" src={`${process.env.PUBLIC_URL}/media/potter.png`} alt="Accueil" />
+              {/* <img className="menu-icon" src={`${process.env.PUBLIC_URL}/media/potter.png`} alt="Accueil" /> */}
               <p>Themes</p>
             </div>
           </Menu.Item>
-          <Menu.Item key="/Crée ton quizz" onClick={handleMenuItemClick}>
+          <Menu.Item key="/Cree-ton-quizz" onClick={handleMenuItemClick}>
             <div className="menu-item-content">
-              <img className="menu-icon" src={`${process.env.PUBLIC_URL}/media/riu.png`} alt="Accueil" />
+              {/* <img className="menu-icon" src={`${process.env.PUBLIC_URL}/media/riu.png`} alt="Accueil" /> */}
               <p>Cree ton Quizz</p>
             </div>
           </Menu.Item>
-          <Menu.Item key="/Mon compte" onClick={handleMenuItemClick}>
+          <Menu.Item key="/Mon-compte" onClick={handleMenuItemClick}>
             <div className="menu-item-content">
-              <img className="menu-icon" src={`${process.env.PUBLIC_URL}/media/razmo.png`} alt="Accueil" />
+              {/* <img className="menu-icon" src={`${process.env.PUBLIC_URL}/media/razmo.png`} alt="Accueil" /> */}
               <p>Mon compte</p>
             </div>
           </Menu.Item>
-          <Menu.Item key="/A propos de nous" onClick={handleMenuItemClick}>
+          <Menu.Item key="/A-propos-de-nous" onClick={handleMenuItemClick}>
             <div className="menu-item-content">
-              <img className="menu-icon" src={`${process.env.PUBLIC_URL}/media/razmo.png`} alt="Accueil" />
+              {/* <img className="menu-icon" src={`${process.env.PUBLIC_URL}/media/razmo.png`} alt="Accueil" /> */}
               <p>A Propos de Nous</p>
             </div>
           </Menu.Item>
