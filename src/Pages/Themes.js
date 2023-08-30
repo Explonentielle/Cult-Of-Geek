@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Card from "../components/Card";
-import Data from "../data/answers";
 
 const Themes = () => {
   const navigate = useNavigate();
+  const [quizzList, setQuizzList] = useState([])
+
+  const getQuizz = async () => {
+    const response = await fetch('http://localhost:5500/api/quizz')
+      .then(res => res.json());
+      setQuizzList(response);
+  }
+
+  useEffect(() => {
+    getQuizz();
+  }, []);
 
   function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -18,7 +28,7 @@ const Themes = () => {
     navigate(`/Quizz/${value}`, { state: { content } });
   };
 
-  const cardList = Data.map((theme, index) => {
+  const cardList = quizzList.map((theme, index) => {
     return (
       <Card
         key={index}

@@ -1,53 +1,40 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import { MdClose } from 'react-icons/md';
+import { UserContext } from '../AuthContext'
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import Cookies from 'js-cookie';
 
-const LoginBar = ({ className, onLoginSuccess, onLogoutSuccess  }) => {
-    const navigate = useNavigate()
-    const [log, setLog] = useState(isAuthenticated());
+const LoginBar = ({ className }) => {
+    const { user, setUser, token, setToken } = useContext(UserContext);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     useEffect(() => {
-        setLog(isAuthenticated());
-    }, [log]);
+    }, [user]);
 
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
             const response = await axios.post('http://localhost:5500/api/Auth/login', {
                 email,
-                password
+                password,
             });
-            localStorage.setItem('token', response.data.token);
-            localStorage.setItem('user', JSON.stringify(response.data.user));
-            setLog(true);
-            onLoginSuccess(response.data.user)
+            setToken(response.data);
         } catch (error) {
             console.error(error);
         }
-
     };
 
-    function isAuthenticated() {
-        const token = localStorage.getItem('token');
-        const user = localStorage.getItem('user');
-        return (token !== null && user !== null);
-    }
-
-    function handleLogout() {
-        onLogoutSuccess()
+      const handleLogout = () => {
+        Cookies.remove('token');
         setEmail('');
         setPassword('');
-        localStorage.removeItem('token');
-        localStorage.removeItem('user');
-        setLog(false);
-    }
+        setUser(null);
+    };
 
     return (
         <div className={className} >
-            {log ?
+            {user ?
                 <button className='déconnexion' onClick={handleLogout}>
                     <MdClose className='icon-white' /> Deconnexion
                 </button>

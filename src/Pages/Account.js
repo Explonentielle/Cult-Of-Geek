@@ -1,28 +1,22 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import LoginBar from '../components/LoginBar';
 import { useNavigate } from 'react-router-dom';
 import { FaSignInAlt } from 'react-icons/fa'
+import { UserContext } from '../AuthContext'
 
 const Account = () => {
     const [userData, setUserData] = useState(null);
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const { user, setUser } = useContext(UserContext);
+
 
     const handleSignIn = () => {
         navigate("/Inscription")
     }
 
-    const handleLoginSuccess = (user) => {
-        setUserData(user);
-    };
-
-    const handleLogoutSuccess = () => {
-        setUserData(null);
-    };
-
     useEffect(() => {
-        const user = JSON.parse(localStorage.getItem('user'));
         setUserData(user);
-    }, []);
+    }, [user]);
 
     return (
         <div className="Container">
@@ -74,17 +68,14 @@ const Account = () => {
                     </div>
                     <LoginBar
                         className='loginBar'
-                        onLoginSuccess={handleLoginSuccess} 
-                        onLogoutSuccess={handleLogoutSuccess} />
-                        
+                    />
+
                 </div>
                 :
                 <div className='loginBarContainer'>
                     <p>Connectez vous pour acceder a votre Compte</p>
                     <LoginBar
                         className='loginBar'
-                        onLoginSuccess={handleLoginSuccess}
-                        onLogoutSuccess={handleLogoutSuccess}
                     />
                     <p>je n'ai pas encore de compte</p>
                     <button className='registerButton' onClick={handleSignIn}>

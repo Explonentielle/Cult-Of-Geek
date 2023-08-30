@@ -11,6 +11,9 @@ import Themes from './Pages/Themes'
 import Register from './Pages/Register'
 import emailjs from 'emailjs-com';
 import Account from './Pages/Account'
+import { UserContextProvider } from './AuthContext';
+import axios from 'axios';
+axios.defaults.withCredentials = true;
 
 
 
@@ -19,18 +22,20 @@ const Root = () => {
   emailjs.init('ukK4nOqVQx9KqkBHP');
   return (
     <BrowserRouter>
-      <Header className={'header'} />
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/Selection" element={<Themes />} />
-        <Route exact path="/Inscription" element={<Register />} />
-        <Route exact path="/Quizz/:theme" element={<Quizz />} />
-        <Route exact path="/Result" element={<Result />} />
-        <Route exact path="/Cree-ton-quizz" element={<QuizzCreation />} />
-        <Route exact path="/Mon-compte" element={<Account />} />
-        <Route exact path="/A-propos-de-nous" element={<About />} />
-      </Routes>
-      <Footer />
+      <UserContextProvider>
+        <Header className={'header'} />
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/Selection" element={<Themes />} />
+          <Route exact path="/Inscription" element={<Register />} />
+          <Route exact path="/Quizz/:theme" element={<Quizz />} />
+          <Route exact path="/Result" element={<Result />} />
+          <Route exact path="/Cree-ton-quizz" element={<QuizzCreation />} />
+          <Route exact path="/Mon-compte" element={<Account />} />
+          <Route exact path="/A-propos-de-nous" element={<About />} />
+        </Routes>
+        <Footer />
+      </UserContextProvider>
     </BrowserRouter>
   )
 }

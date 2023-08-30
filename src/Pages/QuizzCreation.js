@@ -1,13 +1,13 @@
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { FaSignInAlt } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom'
-import CreationForm from '../components/CreationForm'
+import AddQuestionForm from '../components/AddQuestionForm'
+import { UserContext } from '../AuthContext'
 
 const QuizzCreation = () => {
   const navigate = useNavigate()
-  const [userData, setUserData] = useState(localStorage.getItem('user'));
-  const [log, setLog] = useState(isAuthenticated());
-
+  const [userData, setUserData] = useState(null);
+  const { user, setUser } = useContext(UserContext);
 
 
 
@@ -15,20 +15,17 @@ const QuizzCreation = () => {
     navigate("/Mon-compte")
   }
 
-  function isAuthenticated() {
-    const token = localStorage.getItem('token');
-    const user = localStorage.getItem('user');
-    return (token !== null && user !== null);
-  }
-
+  useEffect(() => {
+    setUserData(user);
+  }, [user]);
 
   return (
     <div className="Container">
 
       {
-        log ?
+        userData ?
           <div>
-            <CreationForm />
+            <AddQuestionForm />
           </div>
           :
           <div className='quizzCreation'>
