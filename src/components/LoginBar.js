@@ -1,11 +1,10 @@
 import React, { useEffect, useState, useContext } from 'react'
 import { MdClose } from 'react-icons/md';
-import { UserContext } from '../AuthContext'
-import axios from 'axios';
-import Cookies from 'js-cookie';
+import { useAuth } from'../AuthContext';
+
 
 const LoginBar = ({ className }) => {
-    const { user, setUser, token, setToken } = useContext(UserContext);
+    const { user, login, logout } = useAuth()
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -14,22 +13,13 @@ const LoginBar = ({ className }) => {
 
     const handleLogin = async (e) => {
         e.preventDefault();
-        try {
-            const response = await axios.post('http://localhost:5500/api/Auth/login', {
-                email,
-                password,
-            });
-            setToken(response.data);
-        } catch (error) {
-            console.error(error);
-        }
+        login(email, password)
     };
 
       const handleLogout = () => {
-        Cookies.remove('token');
+        logout()
         setEmail('');
         setPassword('');
-        setUser(null);
     };
 
     return (

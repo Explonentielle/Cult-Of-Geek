@@ -2,12 +2,12 @@ import React, { useContext, useEffect, useState } from 'react'
 import { FaSignInAlt } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom'
 import AddQuestionForm from '../components/AddQuestionForm'
-import { UserContext } from '../AuthContext'
+import { useAuth } from'../AuthContext';
 
 const QuizzCreation = () => {
   const navigate = useNavigate()
   const [userData, setUserData] = useState(null);
-  const { user, setUser } = useContext(UserContext);
+  const { user, setUser } = useAuth()
 
 
 

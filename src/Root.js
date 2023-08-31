@@ -11,7 +11,7 @@ import Themes from './Pages/Themes'
 import Register from './Pages/Register'
 import emailjs from 'emailjs-com';
 import Account from './Pages/Account'
-import { UserContextProvider } from './AuthContext';
+import { AuthProvider } from './AuthContext';
 import axios from 'axios';
 axios.defaults.withCredentials = true;
 
@@ -22,7 +22,7 @@ const Root = () => {
   emailjs.init('ukK4nOqVQx9KqkBHP');
   return (
     <BrowserRouter>
-      <UserContextProvider>
+      <AuthProvider>
         <Header className={'header'} />
         <Routes>
           <Route exact path="/" element={<Home />} />
@@ -35,7 +35,7 @@ const Root = () => {
           <Route exact path="/A-propos-de-nous" element={<About />} />
         </Routes>
         <Footer />
-      </UserContextProvider>
+      </AuthProvider>
     </BrowserRouter>
   )
 }

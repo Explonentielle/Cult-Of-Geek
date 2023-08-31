@@ -2,12 +2,12 @@ import React, { useEffect, useState, useContext } from 'react'
 import LoginBar from '../components/LoginBar';
 import { useNavigate } from 'react-router-dom';
 import { FaSignInAlt } from 'react-icons/fa'
-import { UserContext } from '../AuthContext'
+import { useAuth } from'../AuthContext';
 
 const Account = () => {
     const [userData, setUserData] = useState(null);
     const navigate = useNavigate();
-    const { user, setUser } = useContext(UserContext);
+    const { user, setUser } = useAuth()
 
 
     const handleSignIn = () => {
