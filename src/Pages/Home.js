@@ -1,15 +1,14 @@
 import React from "react";
+import { Canvas } from '@react-three/fiber'
+import SceneTest from '../components/SceneTest';
 
 
 const Acceuil = () => {
   return (
-    <div className="Container">
-      {/* <div className="icon-home">
-        <img src={`${process.env.PUBLIC_URL}/media/ic.png`} alt="log" />
-      </div> */}
-      <p className="acro">
+    <div className=" noPading" >
+      {/* <p className="acro">
         Etes-vous un vrai geek ? Mettez vos connaissances à l'epreuve !{" "}
-      </p>
+      </p> */}
       <div>
         <section className="loader-container">
           <div className="animation-container">
@@ -89,6 +88,11 @@ const Acceuil = () => {
             </div>
           </div>
         </section>
+      </div>
+      <div className="canvaContainer">
+        <Canvas style={{ width: '100vw'}} >
+          <SceneTest />
+        </Canvas>
       </div>
     </div>
   );

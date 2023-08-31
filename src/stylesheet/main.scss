@@ -21,9 +21,9 @@
 }
 
 .Container {
-  color: black;
+  color: rgba(0, 0, 0);
   width: 100%;
-  background-color: rgb(183, 141, 42);
+  background: linear-gradient(45deg, #FC466B, #3F5EFB);
   height: 100%;
   min-height: 80vh;
   margin-top: 10vh;

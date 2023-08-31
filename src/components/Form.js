@@ -1,40 +1,28 @@
-import React from 'react'
+import React from "react";
 
-const Form = () => {
+function FormBlur() {
+  let url = "#";
   return (
-    <div className='container'>
-      <form>
-        <div class="text">
-        <label for="mail">Email</label>
-        <br></br>
-        <input type="text" id="mail" placeholder="example@fournisseur.com"></input>
-        </div>
-        <div>
-        <label for="categorie">Categorie de la demande :</label>
-        <br></br>
-        <select name="category" id="categorie">
-          <option value="home">
-              Accueil
-          </option>
-          <option value="inscription">
-              Inscription
-          </option>
-          <option value="themes">
-              Themes
-          </option>
-          <option value="createQuizz">
-              Creation de quizz
-          </option>
-        </select>
-        </div>
-        <div>
-          <label for="comment">Laisse le com que tu veux</label>
-          <br></br>
-          <textarea id="comment" placeholder="place ton texte ici"></textarea>
-        </div>
-      </form>
+    <div className="blurContainer bodyBlur">
+      {/* Formulaire */}
+      
+      <div className="flex">
+        <form className="flex">
+        <p>Bienvenue</p>
+          <input type="email" placeholder="Email" /> <br />
+          <input type="password" placeholder="Password" /> <br />
+          <input type="button" value="Submit" /> <br />
+          <a href={url}>Mot de passe oublié</a>
+        </form>
+      </div>
+      {/* Ombre */}
+      <div class="drop drop-1"></div>
+      <div class="drop drop-2"></div>
+      <div class="drop drop-3"></div>
+      <div class="drop drop-4"></div>
+      <div class="drop drop-5"></div>
     </div>
-  )
+  );
 }
 
-export default Form
+export default FormBlur;
