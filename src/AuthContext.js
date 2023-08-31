@@ -9,9 +9,9 @@ export function AuthProvider({ children }) {
 
   const fetchUserData = async () => {
     try {
-      const response = await axios.get('http://localhost:5500/api/Auth/getUser'); 
+      const response = await axios.get('http://localhost:5500/api/Auth/getProfil'); 
       const userData = response.data;
-      console.log(userData);
+
       setUser(userData)
     } catch (error) {
       console.error(error);
@@ -21,7 +21,6 @@ export function AuthProvider({ children }) {
   useEffect(() => {
     const storedToken = Cookies.get('authToken');
     if (storedToken) {
-      console.log(storedToken)
       axios.defaults.headers.common['Authorization'] = `Bearer ${storedToken}`;
       fetchUserData()
     }
@@ -40,10 +39,15 @@ export function AuthProvider({ children }) {
     }
   };
 
-  const logout = () => {
-    Cookies.remove('authToken');
-    axios.defaults.headers.common['Authorization'] = '';
-    setUser(null);
+  const logout = async () => {
+    try {
+      await axios.post('http://localhost:5500/api/Auth/logout');
+      axios.defaults.headers.common['Authorization'] = '';
+      Cookies.remove('authToken');
+      setUser(null);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (

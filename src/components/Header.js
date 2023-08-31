@@ -24,8 +24,6 @@ const Header = ({ logo, className }) => {
       <img onClick={() => navigate("/")} className='logo' src={process.env.PUBLIC_URL + 'media/log.png'} alt="" />
       <div className='menuContainer'>
 
-        {/* <LoginBar className={isMenuOpen ? 'visible' : 'hidden'} /> */}
-
         <Menu
           className={isMenuOpen ? 'OpenMenu' : window.innerWidth <= 8000 ? 'hidden' : 'menu'}
           mode={window.innerWidth <= 8000 ? 'verticale' : 'horizontal'}
