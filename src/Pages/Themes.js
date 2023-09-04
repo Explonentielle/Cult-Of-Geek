@@ -25,6 +25,7 @@ const Themes = () => {
 
   const handleClick = (value, content) => {
     shuffleArray(content)
+    console.log(content)
     navigate(`/Quizz/${value}`, { state: { content } });
   };
 

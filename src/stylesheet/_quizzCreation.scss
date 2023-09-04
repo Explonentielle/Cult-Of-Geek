@@ -1,4 +1,4 @@
-.quizzCreation{
+.quizzCreation {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -7,19 +7,86 @@
 
 .registerButton {
     background-color: #2a2a00;
-    color: #ffffff; 
+    color: #ffffff;
     border: none;
     padding: 10px 20px;
-    font-family: 'Press Start 2P', cursive; 
-    font-size: 16px; 
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
     cursor: pointer;
     border-radius: 4px;
-    text-transform: uppercase; 
-    transition: background-color 0.3s ease, box-shadow 0.3s ease; 
-    box-shadow:5px 5px 5px rgba(0, 0, 0, 0.4);
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
 }
 
 .registerButton:hover {
-    background-color: #ff6b00; 
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6); 
-  }
+    background-color: #ff6b00;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6);
+}
+
+.formContainer {
+    padding: 0 10rem;
+    display: flex;
+    flex-direction: column;
+
+    .success{
+        color: green;
+    }
+    .error{
+        color:red;
+    }
+
+    .column {
+        display: flex;
+        flex-direction: column;
+
+        input{
+            height: 3.5vh;
+            border-radius: 1rem;
+            border: none;
+        }
+    }
+
+    .title {
+        label{
+            margin: 1rem;
+        }
+
+    }
+
+    .theme {
+        label{
+            margin: 1rem;
+        }
+    }
+
+    .question {
+        label{
+            margin: 1rem;
+        }
+    }
+
+    .response {
+        align-items: center;
+        margin: 3rem;
+        div{
+            margin: 1rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+    }
+
+    .true {
+        font-size: 1rem;
+        color: green;
+    }
+    .buttonContainer{
+        display: flex;
+        justify-content: center;
+        button{
+            margin: 1rem 3rem;
+        }
+
+    }
+}

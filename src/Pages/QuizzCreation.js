@@ -24,9 +24,7 @@ const QuizzCreation = () => {
 
       {
         userData ?
-          <div>
             <AddQuestionForm />
-          </div>
           :
           <div className='quizzCreation'>
             <p>Connectez vous pour cree votre quizz personalise </p>

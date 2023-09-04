@@ -13,7 +13,7 @@ import Letters from './Letters';
 const SceneTest = () => {
   var largeur = window.innerWidth;
   const orbitControlsRef = useRef(null)
-  console.log(largeur)
+
 
   useFrame((state) => {
     if (!!orbitControlsRef.current) {
@@ -36,7 +36,7 @@ const SceneTest = () => {
   return (
     <>
 
-      <PerspectiveCamera makeDefault fov={70} position={[0, 0, 20]}>
+      <PerspectiveCamera makeDefault fov={largeur < 1400 ? 70 : 50 } position={[0, 0, 20]}>
 
         <spotLight position={[-10, 10, 10]} angle={0.5}  intensity={10} castShadow shadow-mapSize={[200, 200]} />
 

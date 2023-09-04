@@ -65,7 +65,7 @@ const Letters = () => {
                         font="/Inter_Bold.json"
                     >
                         {letter.letter}
-                        <meshStandardMaterial color={"red"} />
+                        <meshStandardMaterial color={"beige"} />
                     </Text3D>
                 </mesh>
             ))}

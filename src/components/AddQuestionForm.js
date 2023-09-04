@@ -1,58 +1,151 @@
 import React, { useState } from 'react';
+import axios from 'axios'
 
-const AddQuestionForm = ({ onAddQuestion }) => {
-  const [question, setQuestion] = useState('');
-  const [answers, setAnswers] = useState(['', '', '', '']);
+function QuizForm() {
+  const [message, setMessage] = useState('');
+  const [quiz, setQuiz] = useState({
+    title: '',
+    theme: '',
+    content: [],
+  });
+
+  const [currentQuestion, setCurrentQuestion] = useState({
+    question: '',
+    answers: [
+      { id: 1, text: '', correct: true },
+      { id: 2, text: '', correct: false },
+      { id: 3, text: '', correct: false },
+      { id: 4, text: '', correct: false },
+    ],
+  });
+
+  const shuffleAnswers = (answers) => {
+    const shuffledAnswers = [...answers];
+    for (let i = shuffledAnswers.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffledAnswers[i], shuffledAnswers[j]] = [shuffledAnswers[j], shuffledAnswers[i]];
+    }
+    return shuffledAnswers;
+  };
+
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setCurrentQuestion((prevQuestion) => ({
+      ...prevQuestion,
+      [name]: value,
+    }));
+  };
+
+  const handleAnswerChange = (e, index) => {
+    const { value } = e.target;
+    setCurrentQuestion((prevQuestion) => {
+      const updatedAnswers = [...prevQuestion.answers];
+      updatedAnswers[index].text = value;
+      return {
+        ...prevQuestion,
+        answers: updatedAnswers,
+      };
+    });
+  };
 
   const handleAddQuestion = () => {
-    const newQuestion = {
-      question,
-      answers: answers.map((text, index) => ({
-        id: index + 1,
-        text,
-        correct: index === 0, // La première réponse est la correcte par défaut.
-      })),
-    };
+    if (currentQuestion.question.trim() !== '') {
 
-    // Appeler la fonction de rappel pour ajouter la nouvelle question.
-    onAddQuestion(newQuestion);
+      const shuffledAnswers = shuffleAnswers(currentQuestion.answers);
 
-    // Réinitialiser le formulaire après l'ajout.
-    setQuestion('');
-    setAnswers(['', '', '', '']);
+      setQuiz((prevQuiz) => ({
+        ...prevQuiz,
+        content: [...prevQuiz.content, { ...currentQuestion, answers: shuffledAnswers }],
+      }));
+
+      setCurrentQuestion({
+        question: '',
+        answers: [
+          { id: 1, text: '', correct: true },
+          { id: 2, text: '', correct: false },
+          { id: 3, text: '', correct: false },
+          { id: 4, text: '', correct: false },
+        ],
+      });
+      setMessage('Question enregistrée');
+      setTimeout(() => {
+        setMessage('');
+      }, 2000)
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post('http://localhost:5500/api/Quizz/create', quiz);
+      console.log(response.data);
+      setMessage(response.data.message);
+    } catch (error) {
+      console.error(error);
+      if (error.response) {
+        setMessage(error.response.data.message);
+      } else {
+        setMessage('Une erreur s\'est produite.');
+      }
+    }
+    console.log(quiz)
   };
 
   return (
-    <div>
-      <h2>Ajouter une nouvelle question</h2>
-      <label>Question :</label>
-      <input
-        type="text"
-        value={question}
-        onChange={(e) => setQuestion(e.target.value)}
-      />
-      <br />
-
-      <label>Réponses :</label>
-      {answers.map((text, index) => (
-        <div key={index}>
-          <input
-            type="text"
-            value={text}
-            onChange={(e) => {
-              const newAnswers = [...answers];
-              newAnswers[index] = e.target.value;
-              setAnswers(newAnswers);
-            }}
-          />
-          {index === 0 && <span> (Correcte)</span>}
-          <br />
-        </div>
-      ))}
-
-      <button onClick={handleAddQuestion}>Ajouter</button>
-    </div>
+    <form className='formContainer' onSubmit={handleSubmit}>
+      <div className='title column'>
+        <label>Titre du quiz:</label>
+        <input
+          type="text"
+          name="title"
+          value={quiz.title}
+          onChange={(e) => setQuiz({ ...quiz, title: e.target.value })}
+        />
+      </div>
+      <div className='theme column'>
+        <label>Thème:</label>
+        <input
+          type="text"
+          name="theme"
+          value={quiz.theme}
+          onChange={(e) => setQuiz({ ...quiz, theme: e.target.value })}
+        />
+      </div>
+      <div className='question column'>
+        <label>Question:</label>
+        <input
+          type="text"
+          name="question"
+          value={currentQuestion.question}
+          onChange={handleInputChange}
+        />
+      </div>
+      <div className='response column'>
+        <label>Réponses:</label>
+        {currentQuestion.answers.map((answer, index) => (
+          <div key={answer.id}>
+            <input
+              type="text"
+              name={`answer${answer.id}`}
+              value={answer.text}
+              onChange={(e) => handleAnswerChange(e, index)}
+            />
+            {index === 0 && (
+              <p className='true'>Réponse exacte</p>
+            )}
+          </div>
+        ))}
+      </div>
+      {message && <p className={message.includes('succès') ? 'success' : ''}>{message}</p>}
+      <div className='buttonContainer'>
+        <button className='registerButton' type="button" onClick={handleAddQuestion}>
+          Ajouter une question
+        </button>
+        <button className='registerButton' type="submit">Terminer le quiz</button>
+      </div>
+    </form>
   );
-};
+}
 
-export default AddQuestionForm;
+export default QuizForm;
