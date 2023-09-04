@@ -11,6 +11,7 @@ import Themes from './Pages/Themes'
 import Register from './Pages/Register'
 import emailjs from 'emailjs-com';
 import Account from './Pages/Account'
+import Recap from './components/Recap'
 import { AuthProvider } from './AuthContext';
 import axios from 'axios';
 axios.defaults.withCredentials = true;
@@ -33,6 +34,8 @@ const Root = () => {
           <Route exact path="/Cree-ton-quizz" element={<QuizzCreation />} />
           <Route exact path="/Mon-compte" element={<Account />} />
           <Route exact path="/A-propos-de-nous" element={<About />} />
+          <Route exact path="/Recap" element={<Recap />} />
+
         </Routes>
         <Footer />
       </AuthProvider>

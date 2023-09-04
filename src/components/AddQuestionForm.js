@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios'
 import { useAuth } from'../AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 function QuizForm() {
   const { user, setUser } = useAuth()
+  const navigate = useNavigate()
   const [message, setMessage] = useState('');
   const [quiz, setQuiz] = useState({
     title: '',
@@ -73,28 +75,31 @@ function QuizForm() {
       setMessage('Question enregistrée');
       setTimeout(() => {
         setMessage('');
-      }, 2000)
+      }, 1500)
     }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const quizResponse = await axios.post('http://localhost:5500/api/Quizz/create', quiz);
-      console.log(quizResponse.data);
+    navigate(`/Recap/`, { state: { quiz } });
+
+
+    // try {
+    //   const quizResponse = await axios.post('http://localhost:5500/api/Quizz/create', quiz);
+    //   console.log(quizResponse.data);
   
-      const userId = user._id
-      const AuthResponse = await axios.post(
-        `http://localhost:5500/api/Auth/${userId}/add-quizz`,
-        { quizz: quiz } 
-      );
-      console.log(AuthResponse.data);
+    //   const userId = user._id
+    //   const AuthResponse = await axios.post(
+    //     `http://localhost:5500/api/Auth/${userId}/add-quizz`,
+    //     { quizz: quiz } 
+    //   );
+    //   console.log(AuthResponse.data);
   
-      setMessage(AuthResponse.data.message);
-    } catch (error) {
-      console.error(error);
-      setMessage('Une erreur s\'est produite.');
-    }
+    //   setMessage(AuthResponse.data.message);
+    // } catch (error) {
+    //   console.error(error);
+    //   setMessage('Une erreur s\'est produite.');
+    // }
   };
 
   return (
@@ -145,9 +150,9 @@ function QuizForm() {
       {message && <p className={message.includes('succès') ? 'success' : ''}>{message}</p>}
       <div className='buttonContainer'>
         <button className='registerButton' type="button" onClick={handleAddQuestion}>
-          Ajouter une question
+          Ajouter la question
         </button>
-        <button className='registerButton' type="submit">Terminer le quiz</button>
+        <button className='registerButton' type="submit">Voir le récap</button>
       </div>
     </form>
   );

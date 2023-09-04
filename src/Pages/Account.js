@@ -9,6 +9,7 @@ const Account = () => {
     const [userData, setUserData] = useState(null);
     const navigate = useNavigate();
     const { user, setUser } = useAuth()
+    let personalQuizzList;
 
     function shuffleArray(array) {
         for (let i = array.length - 1; i > 0; i--) {
@@ -19,7 +20,6 @@ const Account = () => {
 
     const handleClick = (value, content) => {
         shuffleArray(content)
-        console.log(content)
         navigate(`/Quizz/${value}`, { state: { content } });
     };
 
@@ -32,20 +32,19 @@ const Account = () => {
         setUserData(user);
     }, [user]);
 
-
-    console.log(user.quizzes)
-    const personalQuizzList = user.quizzes.map((quizz, index) => {
-        console.log(quizz)
-        return (
-            <Card
-                key={index}
-                className={`personalQuizz card`}
-                title={quizz.title}
-                action={() => handleClick(quizz.title, quizz.content)}
-            />
-        )
-
-    })
+    if (user) {
+        personalQuizzList = user.quizzes.map((quizz, index) => {
+            return (
+                <Card
+                    key={index}
+                    className={`general personalQuizz card`}
+                    title={quizz.title}
+                    action={() => handleClick(quizz.title, quizz.content)}
+                />
+            )
+    
+        })
+    }
 
     return (
         <div className="Container">
@@ -81,7 +80,7 @@ const Account = () => {
                     <div className='personalQuizzContainer'>
                         <h2>Mes Quizzs Perso</h2>
                         <div className='quizzcontainer'>
-                            {personalQuizzList}
+                            {user ? personalQuizzList : ""}
                         </div>
                     </div>
                     <LoginBar
