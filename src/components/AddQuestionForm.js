@@ -1,18 +1,23 @@
-import React, { useState } from 'react';
-import axios from 'axios'
-import { useAuth } from'../AuthContext';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react'; // Importation des modules nécessaires
+import axios from 'axios'; // Importation du module Axios pour effectuer des requêtes HTTP
+import { useAuth } from '../AuthContext'; // Importation d'un hook personnalisé depuis un contexte d'authentification
+import { useNavigate } from 'react-router-dom'; // Importation d'un hook de navigation depuis React Router
 
 function QuizForm() {
-  const { user, setUser } = useAuth()
-  const navigate = useNavigate()
+  const { user, setUser } = useAuth(); // Obtient l'utilisateur actuellement authentifié à partir du contexte
+  const navigate = useNavigate(); // Obtient la fonction de navigation depuis React Router
+
+  // État pour afficher un message à l'utilisateur
   const [message, setMessage] = useState('');
+
+  // État pour stocker les données du quiz en cours de création
   const [quiz, setQuiz] = useState({
     title: '',
     theme: '',
     content: [],
   });
 
+  // État pour gérer la question en cours d'édition
   const [currentQuestion, setCurrentQuestion] = useState({
     question: '',
     answers: [
@@ -23,6 +28,7 @@ function QuizForm() {
     ],
   });
 
+  // Fonction pour mélanger les réponses d'une question dans un ordre aléatoire
   const shuffleAnswers = (answers) => {
     const shuffledAnswers = [...answers];
     for (let i = shuffledAnswers.length - 1; i > 0; i--) {
@@ -32,7 +38,7 @@ function QuizForm() {
     return shuffledAnswers;
   };
 
-
+  // Gère le changement de saisie dans les champs de la question en cours d'édition
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setCurrentQuestion((prevQuestion) => ({
@@ -41,6 +47,7 @@ function QuizForm() {
     }));
   };
 
+  // Gère le changement de saisie dans les champs de réponse de la question en cours d'édition
   const handleAnswerChange = (e, index) => {
     const { value } = e.target;
     setCurrentQuestion((prevQuestion) => {
@@ -53,6 +60,7 @@ function QuizForm() {
     });
   };
 
+  // Ajoute une question au quiz en cours de création
   const handleAddQuestion = () => {
     if (currentQuestion.question.trim() !== '') {
 
@@ -63,6 +71,7 @@ function QuizForm() {
         content: [...prevQuiz.content, { ...currentQuestion, answers: shuffledAnswers }],
       }));
 
+      // Réinitialise la question en cours d'édition
       setCurrentQuestion({
         question: '',
         answers: [
@@ -72,17 +81,22 @@ function QuizForm() {
           { id: 4, text: '', correct: false },
         ],
       });
+
+      // Affiche un message de confirmation pendant 2 secondes
       setMessage('Question enregistrée');
       setTimeout(() => {
         setMessage('');
-      }, 1500)
+      }, 2000)
     }
   };
 
+  // Gère la soumission du formulaire de création de quiz
   const handleSubmit = async (e) => {
     e.preventDefault();
     navigate(`/Recap/`, { state: { quiz } });
 
+    // Le code ci-dessous (actuellement commenté) serait utilisé pour envoyer le quiz au serveur
+    // et gérer la réponse du serveur, mais il est commenté dans votre code.
 
     // try {
     //   const quizResponse = await axios.post('http://localhost:5500/api/Quizz/create', quiz);
@@ -102,6 +116,7 @@ function QuizForm() {
     // }
   };
 
+  // Rendu du formulaire
   return (
     <form className='formContainer' onSubmit={handleSubmit}>
       <div className='title column'>
