@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios'
+import { useAuth } from'../AuthContext';
 
 function QuizForm() {
+  const { user, setUser } = useAuth()
   const [message, setMessage] = useState('');
   const [quiz, setQuiz] = useState({
     title: '',
@@ -78,18 +80,21 @@ function QuizForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5500/api/Quizz/create', quiz);
-      console.log(response.data);
-      setMessage(response.data.message);
+      const quizResponse = await axios.post('http://localhost:5500/api/Quizz/create', quiz);
+      console.log(quizResponse.data);
+  
+      const userId = user._id
+      const AuthResponse = await axios.post(
+        `http://localhost:5500/api/Auth/${userId}/add-quizz`,
+        { quizz: quiz } 
+      );
+      console.log(AuthResponse.data);
+  
+      setMessage(AuthResponse.data.message);
     } catch (error) {
       console.error(error);
-      if (error.response) {
-        setMessage(error.response.data.message);
-      } else {
-        setMessage('Une erreur s\'est produite.');
-      }
+      setMessage('Une erreur s\'est produite.');
     }
-    console.log(quiz)
   };
 
   return (
