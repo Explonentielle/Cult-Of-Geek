@@ -6,9 +6,9 @@ import SceneTest from '../components/SceneTest';
 const Acceuil = () => {
   return (
     <div className=" noPading" >
-      {/* <p className="acro">
+      <p className="acro">
         Etes-vous un vrai geek ? Mettez vos connaissances à l'epreuve !{" "}
-      </p> */}
+      </p>
       <div>
         <section className="loader-container">
           <div className="animation-container">
@@ -89,11 +89,11 @@ const Acceuil = () => {
           </div>
         </section>
       </div>
-      <div className="canvaContainer">
+      {/* <div className="canvaContainer">
         <Canvas style={{ width: '100vw'}} >
           <SceneTest />
         </Canvas>
-      </div>
+      </div> */}
     </div>
   );
 };
