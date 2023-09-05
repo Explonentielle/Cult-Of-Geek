@@ -3,7 +3,7 @@ import { Progress } from 'antd';
 
 const CircularProgressBar = ({ percentage }) => { 
   let color = ""
-  console.log(percentage)
+
   if (percentage < 50) {
     color = "red"
   }
@@ -12,7 +12,7 @@ const CircularProgressBar = ({ percentage }) => {
   }
     return (
         <div className='progessContainer'>
-          <Progress type="circle" trailColor={'white'} percent={percentage} strokeColor={color}   textStyle={'white'}  />
+          <Progress type="circle" trailColor={'white'} percent={percentage} strokeColor={color} />
         </div>
       );
 }
