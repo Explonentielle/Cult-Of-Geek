@@ -2,7 +2,7 @@
 
 .header {
     color: black;
-    background-color: rgb(255, 252, 249);
+    background-color: rgb(240, 240, 240);
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -143,40 +143,42 @@
 
 .déconnexion {
     background-color: #2a2a00;
-    color: #ffffff; 
+    color: #ffffff;
     border: none;
     padding: 10px 20px;
-    font-family: 'Press Start 2P', cursive; 
-    font-size: 16px; 
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
     cursor: pointer;
     border-radius: 4px;
-    text-transform: uppercase; 
-    transition: background-color 0.3s ease, box-shadow 0.3s ease; 
-    box-shadow:5px 5px 5px rgba(0, 0, 0, 0.4);
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
 }
+
 .déconnexion:hover {
-    background-color: #ff6b00; 
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6); 
-  }
+    background-color: #ff6b00;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6);
+}
 
 .connexionBtn {
     background-color: #2a2a00;
-    color: #ffffff; 
+    color: #ffffff;
     border: none;
     padding: 10px 20px;
-    font-family: 'Press Start 2P', cursive; 
-    font-size: 16px; 
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
     cursor: pointer;
     border-radius: 4px;
-    text-transform: uppercase; 
-    transition: background-color 0.3s ease, box-shadow 0.3s ease; 
-    box-shadow:5px 5px 5px rgba(0, 0, 0, 0.4);
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
     margin: 2rem;
 }
+
 .connexionBtn:hover {
-    background-color: #ff6b00; 
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6); 
-  }
+    background-color: #ff6b00;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6);
+}
 
 
 .formLog {
@@ -185,7 +187,7 @@
     flex-direction: column;
     align-items: center;
     z-index: 3;
-    margin: 0 3rem;
+    border-radius: 3rem;
 
 
     .inputLog {
@@ -203,4 +205,13 @@
 
 .loginBar {
     margin: 2rem 0;
+}
+
+.forgotpassword {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 12px;
+    &:hover {
+        text-shadow: 2px 2px 4px rgb(0, 0, 0);
+    }
 }

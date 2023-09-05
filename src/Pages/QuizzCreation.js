@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaSignInAlt } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom'
 import AddQuestionForm from '../components/AddQuestionForm'
@@ -7,9 +7,7 @@ import { useAuth } from'../AuthContext';
 const QuizzCreation = () => {
   const navigate = useNavigate()
   const [userData, setUserData] = useState(null);
-  const { user, setUser } = useAuth()
-
-
+  const { user } = useAuth()
 
   const handleSignIn = () => {
     navigate("/Mon-compte")
@@ -21,7 +19,6 @@ const QuizzCreation = () => {
 
   return (
     <div className="Container">
-
       {
         userData ?
             <AddQuestionForm />
@@ -32,7 +29,6 @@ const QuizzCreation = () => {
               <FaSignInAlt /> Se connecter
             </button>
           </div>
-
       }
     </div>
   )

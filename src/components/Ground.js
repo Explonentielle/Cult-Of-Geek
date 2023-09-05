@@ -2,23 +2,27 @@ import { MeshReflectorMaterial } from '@react-three/drei'
 import convertDegrees from '../data/convertDegrees'
 import React from 'react'
 import { useLoader } from '@react-three/fiber'
-import {  TextureLoader } from 'three'
+import { TextureLoader } from 'three'
+
 
 
 const Ground = () => {
 
-    const texture = useLoader(TextureLoader, process.env.PUBLIC_URL + 'textures/texture.jpg');
+    const texture = useLoader(TextureLoader, process.env.PUBLIC_URL + 'textures/texture6.jpg');
+   
+
 
     return (
-        <mesh position={[0, -0.5, 4]} rotation={[convertDegrees(270), 0, 0]} castShadow receiveShadow>
-            <planeGeometry args={[2000, 2000]} />
+        <mesh position={[0, -0.5, -40]} rotation={[convertDegrees(0), 0, 0]} castShadow receiveShadow>
+            <planeGeometry args={[600, 600]} />
             {texture && (
                 <MeshReflectorMaterial
+                    castShadow 
+                    receiveShadow
                     envMapIntensity={0}
                     map={texture}
                     normalScale={[0.15, 0.15]}
                     dithering={true}
-                    color={'grey'}
                     roughness={0.7}
                     blur={[1000, 400]}
                     mixBlur={5}

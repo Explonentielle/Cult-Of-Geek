@@ -3,10 +3,13 @@ import { useFrame } from '@react-three/fiber'
 import { useEffect, useRef, useState } from 'react';
 import React from 'react'
 import letters from '../data/tittleContent'
+import {  TextureLoader } from 'three'
+import { useLoader } from '@react-three/fiber'
 
 
 const Letters = () => {
     const letterRefs = useRef([])
+    const texture = useLoader(TextureLoader, process.env.PUBLIC_URL + 'textures/texture4.jpg');
     const [hoveredLetterIndex, setHoveredLetterIndex] = useState(null);
   
     useFrame((state) => {
@@ -46,12 +49,14 @@ const Letters = () => {
       }, [])
   
     return (
-        <Text3D letterSpacing={-0.2} font="/Inter_Bold.json">
+        <Text3D font="/PressStart.json">
             {letters.letters.map((letter, index) => (
                 <mesh
                     key={index}
                 >
                     <Text3D
+                        castShadow 
+                        receiveShadow 
                         position={letter.position}
                         ref={(ref) => (letterRefs.current[index] = ref)}
                         onPointerEnter={() => setHoveredLetterIndex(index)}
@@ -62,10 +67,13 @@ const Letters = () => {
                         bevelThickness={0.1}
                         height={0.5}
                         size={1}
-                        font="/Inter_Bold.json"
+                        font="/PressStart.json"
                     >
                         {letter.letter}
-                        <meshStandardMaterial color={"beige"} />
+                        <meshStandardMaterial 
+                          color={hoveredLetterIndex === index ? "lightblue" : "white"}
+                          map={texture} 
+                        />
                     </Text3D>
                 </mesh>
             ))}

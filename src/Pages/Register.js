@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
 import { FaSignInAlt } from 'react-icons/fa'
 
@@ -41,7 +41,7 @@ const Register = () => {
 
   return (
     <div className="Container">
-      <p>Inscription</p>
+      <p className='titleRegister'>Inscription</p>
       {message && <p className={message.includes('succès') ? 'success' : 'error'}>{message}</p>}
       <form className='registerContainer' onSubmit={handleSubmit}>
         <div className='registerForm'>

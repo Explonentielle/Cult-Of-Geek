@@ -15,8 +15,6 @@ const Result = () => {
     navigate(-2); 
   };
 
-
-
   return (
     <div className={rate >= 50 ? 'resultWinContainer' : 'resultLoseContainer'}>
       <p>{`${score} bonne réponse / ${length} questions`}</p>

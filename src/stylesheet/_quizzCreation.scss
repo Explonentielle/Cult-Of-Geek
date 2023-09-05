@@ -2,6 +2,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    
+    p{
+        text-align: center;
+        text-transform: uppercase;
+        font-family: 'Press Start 2P', cursive;
+    }
 }
 
 
@@ -28,6 +34,19 @@
     padding: 0 10rem;
     display: flex;
     flex-direction: column;
+    background-color:rgba(240, 240, 240, 0.3);
+    border-radius: 3rem;
+    margin-bottom: 5rem;
+
+    @media screen and (max-width: 426px) {
+        padding: 0 3rem;
+    }
+
+    
+
+    h3{
+        font-size: 2.5rem;
+    }
 
     .success{
         color: green;
@@ -49,6 +68,8 @@
 
     .title {
         label{
+            font-size: 3rem;
+            color: white;
             margin: 1rem;
         }
 
@@ -56,7 +77,19 @@
 
     .theme {
         label{
+            font-size: 3rem;
+            color: white;
             margin: 1rem;
+        }
+    }
+    .visibility{
+        margin: 1rem;
+        flex-direction: row;
+        align-items: center;
+        font-size: 1.5rem;
+        color: white;
+        input{
+            margin: 1rem 2rem;
         }
     }
 
@@ -84,9 +117,52 @@
     .buttonContainer{
         display: flex;
         justify-content: center;
+        margin: 2rem 0;
         button{
             margin: 1rem 3rem;
         }
 
+    }
+}
+
+
+
+// /Recap 
+
+.answers{
+    font-size: 2rem;
+    font-family: 'REM', sans-serif;
+}
+.answersTrue{
+    text-transform: lowercase;
+    color: green;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    font-family: 'REM', sans-serif;
+}
+.answersFalse{
+    text-transform: lowercase;
+    color: red;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    font-family: 'REM', sans-serif;
+}
+
+
+.answersContainerRecap{
+    display: flex;
+    flex-wrap: wrap;
+
+    .answersRecap{
+        display: flex;
+        flex-direction: column;
+        flex-basis: 45%;
+        background-color:rgba(240, 240, 240, 0.3);
+        border-radius: 2rem;
+        margin: 1rem;
+
+        @media screen and (max-width: 426px) {
+            flex-basis: 100%;
+        }
     }
 }

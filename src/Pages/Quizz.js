@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useState } from 'react'
 import { useParams, useLocation, useNavigate } from 'react-router-dom';
 import Card from '../components/Card';
 
@@ -41,8 +41,6 @@ const Quizz = () => {
     });
   };
 
-
-
   const answersList = content[questionIndex].answers.map((item, index) => {
     return (
       <Card
@@ -56,10 +54,9 @@ const Quizz = () => {
 
   return (
     <div className="Container">
-      <h3>Quizz {theme}</h3>
-      <p>question n° {questionIndex + 1} :</p>
-      <p>{content[questionIndex].question}</p>
-
+      <h3 className='quizzTitle'>Quizz {theme}</h3>
+      <p className='questionIndex'>question n° {questionIndex + 1} :</p>
+      <p p className='questionIndex'>{content[questionIndex].question}</p>
       <div className='answersContainer' >
         {answersList}
       </div>

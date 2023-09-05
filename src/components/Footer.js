@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Footer = ({ copyright, className }) => {
+const Footer = () => {
   return (
-    <div className={`Footer ${className}`}>
+    <div className={`Footer`}>
       <div className="logo-left">
         <img src={`${process.env.PUBLIC_URL}/media/LogoChienSeul.png`} alt="Logo Left" />
       </div>

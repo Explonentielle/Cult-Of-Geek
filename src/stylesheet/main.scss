@@ -2,7 +2,7 @@
 @import "reset";
 @import "header";
 @import "footer";
-@import "themes";
+@import "categories";
 @import "quizz";
 @import "components";
 @import "home";
@@ -16,7 +16,6 @@
 
 * {
   list-style-type: none;
-  
   font-family: 'REM', sans-serif;
 }
 

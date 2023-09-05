@@ -1,18 +1,17 @@
 import React from "react";
 
 function FormBlur() {
-  let url = "#";
+
   return (
     <div className="blurContainer bodyBlur">
       {/* Formulaire */}
       
       <div className="flex">
         <form className="flex">
-        <p>Bienvenue</p>
+        <p>Contact</p>
           <input type="email" placeholder="Email" /> <br />
-          <input type="password" placeholder="Password" /> <br />
-          <input type="button" value="Submit" /> <br />
-          <a href={url}>Mot de passe oublié</a>
+          <textarea name="content" id="content" cols="30" rows="10" placeholder='Votres demande'></textarea>
+          <input className="submitContact" type="button" value="Envoyer" /> <br />
         </form>
       </div>
       {/* Ombre */}

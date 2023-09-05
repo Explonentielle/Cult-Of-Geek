@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
-import axios from 'axios'
-import { useAuth } from'../AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 function QuizForm() {
-  const { user, setUser } = useAuth()
+  //////////////////// States et hooks
+
   const [message, setMessage] = useState('');
+  const navigate = useNavigate()
+  const [currentStep, setCurrentStep] = useState(1)
   const [quiz, setQuiz] = useState({
     title: '',
     theme: '',
+    isPrivate: false,
     content: [],
   });
-
   const [currentQuestion, setCurrentQuestion] = useState({
     question: '',
     answers: [
@@ -21,15 +23,15 @@ function QuizForm() {
     ],
   });
 
-  const shuffleAnswers = (answers) => {
-    const shuffledAnswers = [...answers];
-    for (let i = shuffledAnswers.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [shuffledAnswers[i], shuffledAnswers[j]] = [shuffledAnswers[j], shuffledAnswers[i]];
-    }
-    return shuffledAnswers;
-  };
+  //////////////////// fonctions formulaire
 
+  const handleTitleThemeChange = (e) => {
+    const { name, value } = e.target;
+    setQuiz((prevQuiz) => ({
+      ...prevQuiz,
+      [name]: value,
+    }));
+  };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -50,6 +52,14 @@ function QuizForm() {
       };
     });
   };
+
+  const handleCheckboxChange = (e) => {
+    const { name, checked } = e.target;
+    setQuiz((prevQuiz) => ({
+      ...prevQuiz,
+      [name]: checked,
+    }));
+  }
 
   const handleAddQuestion = () => {
     if (currentQuestion.question.trim() !== '') {
@@ -77,80 +87,107 @@ function QuizForm() {
     }
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    try {
-      const quizResponse = await axios.post('http://localhost:5500/api/Quizz/create', quiz);
-      console.log(quizResponse.data);
+    navigate('/Recap', { state: { quiz } })
+  };
   
-      const userId = user._id
-      const AuthResponse = await axios.post(
-        `http://localhost:5500/api/Auth/${userId}/add-quizz`,
-        { quizz: quiz } 
-      );
-      console.log(AuthResponse.data);
-  
-      setMessage(AuthResponse.data.message);
-    } catch (error) {
-      console.error(error);
-      setMessage('Une erreur s\'est produite.');
+  //////////////////// fonctions annexes 
+
+  const shuffleAnswers = (answers) => {
+    const shuffledAnswers = [...answers];
+    for (let i = shuffledAnswers.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffledAnswers[i], shuffledAnswers[j]] = [shuffledAnswers[j], shuffledAnswers[i]];
     }
+    return shuffledAnswers;
+  };
+
+  const handleNextStep = () => {
+    if (quiz.title === '' || quiz.theme === '') {
+      setMessage('Veuillez remplir le titre et le thème.');
+      return;
+    }
+    setCurrentStep(currentStep + 1);
+    setMessage('');
   };
 
   return (
     <form className='formContainer' onSubmit={handleSubmit}>
-      <div className='title column'>
-        <label>Titre du quiz:</label>
-        <input
-          type="text"
-          name="title"
-          value={quiz.title}
-          onChange={(e) => setQuiz({ ...quiz, title: e.target.value })}
-        />
-      </div>
-      <div className='theme column'>
-        <label>Thème:</label>
-        <input
-          type="text"
-          name="theme"
-          value={quiz.theme}
-          onChange={(e) => setQuiz({ ...quiz, theme: e.target.value })}
-        />
-      </div>
-      <div className='question column'>
-        <label>Question:</label>
-        <input
-          type="text"
-          name="question"
-          value={currentQuestion.question}
-          onChange={handleInputChange}
-        />
-      </div>
-      <div className='response column'>
-        <label>Réponses:</label>
-        {currentQuestion.answers.map((answer, index) => (
-          <div key={answer.id}>
+      {currentStep === 1 && (
+        <div>
+          <p>{message}</p>
+          <div className='title column'>
+            <label>Titre du quiz:</label>
             <input
               type="text"
-              name={`answer${answer.id}`}
-              value={answer.text}
-              onChange={(e) => handleAnswerChange(e, index)}
+              name="title"
+              defaultValue={quiz.title}
+              onChange={handleTitleThemeChange}
             />
-            {index === 0 && (
-              <p className='true'>Réponse exacte</p>
-            )}
           </div>
-        ))}
-      </div>
-      {message && <p className={message.includes('succès') ? 'success' : ''}>{message}</p>}
-      <div className='buttonContainer'>
-        <button className='registerButton' type="button" onClick={handleAddQuestion}>
-          Ajouter une question
-        </button>
-        <button className='registerButton' type="submit">Terminer le quiz</button>
-      </div>
+          <div className='theme column'>
+            <label>Thème:</label>
+            <input
+              type="text"
+              name="theme"
+              defaultValue={quiz.theme}
+              onChange={handleTitleThemeChange}
+            />
+          </div>
+          <div className='visibility column'>
+            <label>Si tu coches cette case tu sera le seul a pouvoir voir le quizz que tu vas crée</label>
+            <input
+              type="checkbox"
+              name="isPrivate"
+              defaultChecked={quiz.isPrivate}
+              onChange={handleCheckboxChange}
+            />
+          </div>
+          <div className='buttonContainer'>
+            <button className='registerButton' type="button" onClick={handleNextStep}>
+              Suivant
+            </button>
+          </div>
+        </div>
+      )}
+      {currentStep === 2 && (
+        <div>
+          <div className='question column'>
+            <label>Question:</label>
+            <input
+              type="text"
+              name="question"
+              value={currentQuestion.question}
+              onChange={handleInputChange}
+            />
+          </div>
+          <div className='response column'>
+            <label>Réponses:</label>
+            {currentQuestion.answers.map((answer, index) => (
+              <div key={answer.id}>
+                <input
+                  type="text"
+                  name={`answer${answer.id}`}
+                  value={answer.text}
+                  onChange={(e) => handleAnswerChange(e, index)}
+                />
+                {index === 0 && (
+                  <p className='true'>Réponse exacte</p>
+                )}
+              </div>
+            ))}
+          </div>
+          {message && <p className={message.includes('succès') ? 'success' : ''}>{message}</p>}
+          <div className='buttonContainer'>
+            <button className='registerButton' type="button" onClick={handleAddQuestion}>
+              Ajouter la question
+            </button>
+            <button className='registerButton' type="submit">Voir le récap</button>
+          </div>
+        </div>
+      )}
     </form>
   );
 }
-
 export default QuizForm;
