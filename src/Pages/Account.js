@@ -32,7 +32,6 @@ const Account = () => {
         setUserData(user);
     }, [user]);
 
-
     if (user) {
         personalQuizzList = user.quizzes.map((quizz, index) => {
             return (

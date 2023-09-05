@@ -41,6 +41,7 @@ function QuizForm() {
     }));
   };
 
+  // Gère le changement de saisie dans les champs de réponse de la question en cours d'édition
   const handleAnswerChange = (e, index) => {
     const { value } = e.target;
     setCurrentQuestion((prevQuestion) => {
@@ -71,6 +72,7 @@ function QuizForm() {
         content: [...prevQuiz.content, { ...currentQuestion, answers: shuffledAnswers }],
       }));
 
+      // Réinitialise la question en cours d'édition
       setCurrentQuestion({
         question: '',
         answers: [
@@ -80,6 +82,8 @@ function QuizForm() {
           { id: 4, text: '', correct: false },
         ],
       });
+
+      // Affiche un message de confirmation pendant 2 secondes
       setMessage('Question enregistrée');
       setTimeout(() => {
         setMessage('');
@@ -112,6 +116,7 @@ function QuizForm() {
     setMessage('');
   };
 
+  // Rendu du formulaire
   return (
     <form className='formContainer' onSubmit={handleSubmit}>
       {currentStep === 1 && (

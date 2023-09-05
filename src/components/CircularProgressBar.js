@@ -1,20 +1,21 @@
-import React from 'react'
-import { Progress } from 'antd';
+import React from 'react';
+import { Progress } from 'antd'; // Importe le composant Progress de la bibliothèque Ant Design.
 
 const CircularProgressBar = ({ percentage }) => { 
   let color = ""
 
   if (percentage < 50) {
-    color = "red"
+    color = "red"; // Si le pourcentage est inférieur à 50, la couleur est rouge.
+  } else {
+    color = "green"; // Sinon, la couleur est verte.
   }
-  else {
-    color = "green"
-  }
-    return (
-        <div className='progessContainer'>
-          <Progress type="circle" trailColor={'white'} percent={percentage} strokeColor={color} />
-        </div>
-      );
+
+  return (
+    <div className='progessContainer'>
+      {/* Rendu de la barre de progression circulaire */}
+      <Progress type="circle" trailColor={'white'} percent={percentage} strokeColor={color} textStyle={'white'} />
+    </div>
+  );
 }
 
-export default CircularProgressBar
+export default CircularProgressBar; // Exporte le composant CircularProgressBar.
