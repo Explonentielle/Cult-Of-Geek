@@ -37,6 +37,12 @@
                 border-radius: 3rem;
                 background-color: lightblue;
                 flex-basis: 45%;
+                padding: 2rem;
+                text-align: center;
+
+                p{
+                    margin: 0;
+                }
 
                 @media screen and (max-width: 1020px) {
                     flex-basis: 100%;
