@@ -78,7 +78,7 @@
     background-size: cover;
     background-image: url(../../public/media/lose.gif);
     height: 100%;
-    min-height: 87.5vh;
+    min-height: 90vh;
     padding: 10rem;
     display: flex;
     flex-direction: column;
@@ -115,6 +115,7 @@
     text-align: center;
     font-family: 'Press Start 2P', cursive;
     font-size: 5rem;
+    color: #ffffff;
 
     
     @media screen and (max-width: 428px) {
@@ -126,7 +127,7 @@
     text-align: center;
     text-transform: uppercase;
     font-family: 'Press Start 2P', cursive;
-
+    color: #ffffff;
 }
 
 .ant-progress-text {

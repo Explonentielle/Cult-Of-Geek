@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { Canvas } from '@react-three/fiber'
-import SceneTest from '../components/SceneTest';
 import { FaSignInAlt } from 'react-icons/fa'
 
 const Register = () => {
@@ -106,11 +104,6 @@ const Register = () => {
           <FaSignInAlt className='icon-white' /> s'inscrire
         </button>
       </form>
-      <div className="canvaContainer">
-        <Canvas style={{ width: '100vw'}} >
-          <SceneTest title={'notitle'} />
-        </Canvas>
-      </div>
     </div>
   )
 };

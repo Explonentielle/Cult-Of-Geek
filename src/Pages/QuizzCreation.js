@@ -3,8 +3,6 @@ import { FaSignInAlt } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom'
 import AddQuestionForm from '../components/AddQuestionForm'
 import { useAuth } from'../AuthContext';
-import { Canvas } from '@react-three/fiber'
-import SceneTest from '../components/SceneTest';
 
 const QuizzCreation = () => {
   const navigate = useNavigate()
@@ -32,11 +30,6 @@ const QuizzCreation = () => {
             </button>
           </div>
       }
-       <div className="canvaContainer">
-                <Canvas style={{ width: '100vw' }} >
-                    <SceneTest title={'notitle'} />
-                </Canvas>
-            </div>
     </div>
   )
 }

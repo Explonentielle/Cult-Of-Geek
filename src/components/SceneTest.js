@@ -6,12 +6,14 @@ import convertDegrees from '../data/convertDegrees'
 import React from 'react'
 import { ContactShadows } from '@react-three/drei'
 import Letters from './Letters';
-import Ground from './Ground'
 import Stars from './Stars'
+import { useLocation } from 'react-router-dom';
 
 const SceneTest = ({ title }) => {
+  const location = useLocation()
   var largeur = window.innerWidth;
   const orbitControlsRef = useRef(null)
+  
 
   useFrame((state) => {
     if (!!orbitControlsRef.current) {
@@ -42,7 +44,7 @@ const SceneTest = ({ title }) => {
         <ambientLight intensity={1} position={[0, 10, 0]} />
         <ContactShadows rotation-x={Math.PI / 2.5} position={[0, -1.5, 0]} opacity={0.6} width={15} height={15} blur={1} far={1.5} />
        
-        {title === 'notitle' ? null :  <Letters />}
+        {title === false ? null :  <Letters />}
         <Stars/>
       </Center>
     </>

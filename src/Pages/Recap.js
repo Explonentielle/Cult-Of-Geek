@@ -2,8 +2,6 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { useAuth } from '../AuthContext';
 import { useLocation } from 'react-router-dom';
-import { Canvas } from '@react-three/fiber'
-import SceneTest from '../components/SceneTest';
 
 const Recap = () => {
     const [message, setMessage] = useState('');
@@ -34,7 +32,7 @@ const Recap = () => {
     return (
         <div className='Container'>
             <form className='formContainer' onSubmit={handleSubmit}>
-                {message && <p className={message.includes('succès') ? 'success' : ''}>{message}</p>}
+                {message && <p className={message.includes('succès') ? 'success' : 'error'}>{message}</p>}
                 <h3>Quizz : {quizz.title}</h3>
                 {quizz.content.map((item,) => {
                     return (
@@ -56,11 +54,6 @@ const Recap = () => {
                 })}
                 <button className='registerButton' type="submit">Enregistrer le quizz</button>
             </form>
-            <div className="canvaContainerCategories">
-                <Canvas style={{ width: '100vw' }} >
-                    <SceneTest title={'notitle'} />
-                </Canvas>
-            </div>
         </div>
     )
 }

@@ -25,6 +25,11 @@
         display: flex;
         align-items: center;
         flex-direction: column;
+        height: 100vh;
+
+        @media screen and (max-width: 770px) {
+            padding: 3rem;
+        }
 
     .card {
         width: 50%;
