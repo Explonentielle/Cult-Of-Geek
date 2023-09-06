@@ -35,16 +35,29 @@ const Account = () => {
 
     if (user) {
         personalQuizzList = user.quizzes.map((quizz, index) => {
+
+            const handleDeleteClick = () => {
+               console.log(user._id)
+               console.log(quizz._id)
+            };
+
             let className = validThemes.includes(quizz.title) ? quizz.title : validThemes[Math.floor(Math.random() * validThemes.length)];
 
             return (
-                <Card
-                    key={index}
-                    className={`personalQuizz ${className} card`}
-                    title={quizz.title}
-                    action={() => handleClick(quizz.title, quizz.content)}
-                />
-            )
+                <div key={index} className="personalQuizzCardContainer">
+                    <Card
+                        className={`personalQuizz ${className} card`}
+                        title={quizz.title}
+                        action={() => handleClick(quizz.title, quizz.content)}
+                    />
+                    <button
+                        className="deleteButton"
+                        onClick={handleDeleteClick}
+                    >
+                        ❌
+                    </button>
+                </div>
+            );
         })
     }
 
