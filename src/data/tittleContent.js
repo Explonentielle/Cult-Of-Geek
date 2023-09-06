@@ -1,6 +1,6 @@
 export default {
   "letters": [
-    { "letter": "E", "position": [-15.7, 0, 0] },
+    { "letter": "E", "position": [-15.9, 0, 0] },
     { "letter": "t", "position": [-14.5, 0, 0] },
     { "letter": "e", "position": [-13, 0, 0] },
     { "letter": "s", "position": [-11.5, 0, 0] },
@@ -18,8 +18,8 @@ export default {
     { "letter": "g", "position": [9.1, 0, 0] },
     { "letter": "e", "position": [10.9, 0, 0] },
     { "letter": "e", "position": [12.5, 0, 0] },
-    { "letter": "k", "position": [14.1, 0, 0] },
-    { "letter": "?", "position": [15.7, 0, 0] }
+    { "letter": "k", "position": [14.5, 0, 0] },
+    { "letter": "?", "position": [16.7, 0, 0] }
   ]
 }
 
