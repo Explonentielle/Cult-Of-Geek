@@ -5,12 +5,14 @@
 @import "categories";
 @import "quizz";
 @import "components";
-@import "home";
 @import "about";
 @import "register";
 @import "account";
 @import "quizzCreation";
 @import url('https://fonts.googleapis.com/css2?family=REM:wght@100&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Nosifer&family=Press+Start+2P&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Gloria+Hallelujah&family=Nosifer&family=Press+Start+2P&family=Sedgwick+Ave+Display&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
 
 
 
@@ -29,5 +31,80 @@
 
   @media screen and (max-width: 530px) {
     padding: 3rem 0 ;
+  }
+}
+
+
+
+.canvaContainer {
+  background-color: #000;
+  z-index: -5;
+  position: absolute;
+  top: 10vh;
+  height: 80vh;
+}
+
+.canvaContainerCategorie {
+  background-color: #000;
+  z-index: -5;
+  position: absolute;
+  top: 10vh;
+  height: 200vh;
+
+  @media screen and (max-width: 1030px) {
+    height: 220vh;
+  }
+}
+
+.canvaContainerRegister{
+  background-color: #000;
+  z-index: -5;
+  position: absolute;
+  top: 10vh;
+  height: 80vh;
+
+  @media screen and (max-width: 770px) {
+    height: 130vh;
+  }
+
+  @media screen and (max-width: 530px) {
+    height: 135vh;
+  }
+}
+
+.canvaContainerAccount{
+  background-color: #000;
+  z-index: -5;
+  position: absolute;
+  top: 10vh;
+  height: 80vh;
+
+  @media screen and (max-width: 770px) {
+    height: 120vh;
+  }
+}
+
+.canvaContainerRecap{
+  background-color: #000;
+  z-index: -5;
+  position: absolute;
+  top: 10vh;
+  height: 105vh;
+
+  @media screen and (max-width: 530px) {
+    height: 120vh;
+  }
+}
+
+
+.canvaContainerContact{
+  background-color: #000;
+  z-index: -5;
+  position: absolute;
+  top: 10vh;
+  height: 80vh;
+
+  @media screen and (max-width: 1030px) {
+    height: 85vh;
   }
 }

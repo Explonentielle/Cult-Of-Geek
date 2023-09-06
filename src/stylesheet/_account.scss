@@ -56,6 +56,11 @@
                 text-align: center;
                 cursor: pointer;
                 margin: 2rem;
+                background-size: cover;
+
+                p{
+                    font-weight: 900;
+                }
 
                 @media screen and (max-width: 1020px) {
                     flex-basis: 100%;

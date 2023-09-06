@@ -5,7 +5,7 @@ import Card from "../components/Card";
 const Themes = () => {
   const navigate = useNavigate();
   const [quizzList, setQuizzList] = useState([])
-
+  const validThemes = ["Movies", "Series", "Cartoons", "VideoGame", "general"];
   const getQuizz = async () => {
     const response = await fetch('http://localhost:5500/api/quizz')
       .then(res => res.json());
@@ -29,11 +29,13 @@ const Themes = () => {
   };
 
   const cardList = quizzList.map((theme, index) => {
+    let className = validThemes.includes(theme.title) ? theme.title : validThemes[Math.floor(Math.random() * validThemes.length)];
+
     if (!theme.isPrivate) {
       return (
         <Card
           key={index}
-          className={`${theme.title} card`}
+          className={`${className} card`}
           title={theme.title}
           action={() => handleClick(theme.title, theme.content)}
         />

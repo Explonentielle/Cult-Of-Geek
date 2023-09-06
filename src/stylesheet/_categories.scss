@@ -2,30 +2,26 @@
 
 .Movies {
     background: url("../../public/media/pulp.jpg");
-    border : 4px solid black;
 }
 .Series {
     background: url("../../public/media/series.jpg");
-   
 }
 .Cartoons {
     background: url("../../public/media/cartoons.jpg");
-   
 }
 .VideoGame {
-    background: url("../../public/media/jeux.jpg");
-    
+    background: url("../../public/media/jeux.jpg"); 
 }
 .general {
-    background: url("../../public/media/general.jpg");
-    
+    background: url("../../public/media/general.jpg");   
 }
 
 .themeContainer{
         display: flex;
         align-items: center;
         flex-direction: column;
-        height: 100vh;
+        height: auto;
+        margin-bottom: 10rem;
 
         @media screen and (max-width: 770px) {
             padding: 3rem;

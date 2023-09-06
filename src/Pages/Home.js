@@ -7,9 +7,6 @@ const Acceuil = () => {
   return (
     <div className="noPadingNoBg" >
       <div className="canvaContainer">
-        <Canvas style={{ width: '100vw'}} >
-          <SceneTest />
-        </Canvas>
       </div>
     </div>
   );

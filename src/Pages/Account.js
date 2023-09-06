@@ -9,6 +9,7 @@ const Account = () => {
     const [userData, setUserData] = useState(null);
     const navigate = useNavigate();
     const { user } = useAuth()
+    const validThemes = ["Movies", "Series", "Cartoons", "VideoGame", "general"];
     let personalQuizzList;
 
     function shuffleArray(array) {
@@ -34,10 +35,12 @@ const Account = () => {
 
     if (user) {
         personalQuizzList = user.quizzes.map((quizz, index) => {
+            let className = validThemes.includes(quizz.title) ? quizz.title : validThemes[Math.floor(Math.random() * validThemes.length)];
+
             return (
                 <Card
                     key={index}
-                    className={`personalQuizz card`}
+                    className={`personalQuizz ${className} card`}
                     title={quizz.title}
                     action={() => handleClick(quizz.title, quizz.content)}
                 />
