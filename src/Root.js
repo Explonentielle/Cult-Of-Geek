@@ -38,7 +38,7 @@ const Root = () => {
           <Route exact path="/Recap" element={<Recap />} />
           <Route exact path="/Nouveau-Mot-de-passe" element={<NewPassword />} />
         </Routes>
-        <Footer />
+        <Footer/>
       </AuthProvider>
     </BrowserRouter>
   )

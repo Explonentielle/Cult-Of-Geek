@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Card from "../components/Card";
+import { Canvas } from '@react-three/fiber'
+import SceneTest from '../components/SceneTest';
 
 const Themes = () => {
   const navigate = useNavigate();
@@ -9,7 +11,7 @@ const Themes = () => {
   const getQuizz = async () => {
     const response = await fetch('http://localhost:5500/api/quizz')
       .then(res => res.json());
-      setQuizzList(response);
+    setQuizzList(response);
   }
 
   useEffect(() => {
@@ -45,6 +47,11 @@ const Themes = () => {
     <div className="Container">
       <div className="themeContainer">
         {cardList}
+      </div>
+      <div className="canvaContainerCategories">
+        <Canvas style={{ width: '100vw' }} >
+          <SceneTest title={'notitle'} />
+        </Canvas>
       </div>
     </div>
   );

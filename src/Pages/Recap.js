@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { useAuth } from '../AuthContext';
 import { useLocation } from 'react-router-dom';
+import { Canvas } from '@react-three/fiber'
+import SceneTest from '../components/SceneTest';
 
 const Recap = () => {
     const [message, setMessage] = useState('');
@@ -54,6 +56,11 @@ const Recap = () => {
                 })}
                 <button className='registerButton' type="submit">Enregistrer le quizz</button>
             </form>
+            <div className="canvaContainerCategories">
+                <Canvas style={{ width: '100vw' }} >
+                    <SceneTest title={'notitle'} />
+                </Canvas>
+            </div>
         </div>
     )
 }

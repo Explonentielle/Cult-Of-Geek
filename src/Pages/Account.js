@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import { FaSignInAlt } from 'react-icons/fa'
 import { useAuth } from '../AuthContext';
 import Card from "../components/Card";
+import { Canvas } from '@react-three/fiber'
+import SceneTest from '../components/SceneTest';
 
 const Account = () => {
     const [userData, setUserData] = useState(null);
@@ -99,6 +101,11 @@ const Account = () => {
                     </button>
                 </div>
             }
+             <div className="canvaContainer">
+                <Canvas style={{ width: '100vw' }} >
+                    <SceneTest title={'notitle'} />
+                </Canvas>
+            </div>
         </div>
     )
 }

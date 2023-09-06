@@ -22,11 +22,11 @@
 .Container {
   color: rgba(0, 0, 0);
   width: 100%;
-  background: linear-gradient(45deg, #FC466B, #3F5EFB);
+  // background: linear-gradient(45deg, #FC466B, #3F5EFB);
   height: 100%;
   min-height: 80vh;
   margin-top: 10vh;
-  padding: 10rem;
+  padding: 10rem 0 ;
 
   @media screen and (max-width: 768px) {
     padding: 10rem 3rem;

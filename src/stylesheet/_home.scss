@@ -16,10 +16,19 @@
 }
 
 .canvaContainer {
+  background-color: #000;
   z-index: -5;
   position: absolute;
   top: 10vh;
   height: 80vh;
+}
+
+.canvaContainerCategories{
+  background-color: #000;
+  z-index: -5;
+  position: absolute;
+  top: 10vh;
+  height: 105vh;
 }
 
 @keyframes leg {
