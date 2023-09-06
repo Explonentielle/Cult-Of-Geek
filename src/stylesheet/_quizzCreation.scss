@@ -23,6 +23,11 @@
     text-transform: uppercase;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+    margin: 1rem 3rem;
+
+    @media screen and (max-width: 426px) {
+            margin: 1rem 0.5rem;
+    }
 }
 
 .registerButton:hover {
@@ -31,6 +36,7 @@
 }
 
 .formContainer {
+    margin:3rem 10rem;
     padding: 0 10rem;
     display: flex;
     flex-direction: column;
@@ -40,9 +46,13 @@
 
     @media screen and (max-width: 426px) {
         padding: 0 3rem;
+        margin:3rem 3rem;
     }
 
-    
+    label{
+        color: white;
+
+    }
 
     h3{
         font-size: 2.5rem;
@@ -50,9 +60,11 @@
 
     .success{
         color: green;
+        font-family: 'Press Start 2P', cursive;
     }
     .error{
         color:red;
+        font-family: 'Press Start 2P', cursive;
     }
 
     .column {
@@ -111,17 +123,14 @@
     }
 
     .true {
-        font-size: 1rem;
+        text-align: center;
+        font-size: 1.5rem;
         color: green;
     }
     .buttonContainer{
         display: flex;
         justify-content: center;
         margin: 2rem 0;
-        button{
-            margin: 1rem 3rem;
-        }
-
     }
 }
 
@@ -166,4 +175,10 @@
             flex-basis: 100%;
         }
     }
+}
+
+.message{
+    color: rgb(255, 0, 0);
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.5rem;
 }

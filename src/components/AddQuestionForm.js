@@ -82,12 +82,13 @@ function QuizForm() {
           { id: 4, text: '', correct: false },
         ],
       });
-
-      // Affiche un message de confirmation pendant 2 secondes
-      setMessage('Question enregistrée');
+      setMessage('Question enregistrée avec succès');
       setTimeout(() => {
         setMessage('');
       }, 2000)
+    }
+    else{
+      setMessage('veuillez remplir tout les champs');
     }
   };
 
@@ -121,7 +122,7 @@ function QuizForm() {
     <form className='formContainer' onSubmit={handleSubmit}>
       {currentStep === 1 && (
         <div>
-          <p>{message}</p>
+          <p className='message'>{message}</p>
           <div className='title column'>
             <label>Titre du quiz:</label>
             <input
@@ -183,7 +184,7 @@ function QuizForm() {
               </div>
             ))}
           </div>
-          {message && <p className={message.includes('succès') ? 'success' : ''}>{message}</p>}
+          {message && <p className={message.includes('succès') ? 'success' : 'message'}>{message}</p>}
           <div className='buttonContainer'>
             <button className='registerButton' type="button" onClick={handleAddQuestion}>
               Ajouter la question

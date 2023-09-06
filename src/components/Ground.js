@@ -8,33 +8,32 @@ import { TextureLoader } from 'three'
 
 const Ground = () => {
 
-    const texture = useLoader(TextureLoader, process.env.PUBLIC_URL + 'textures/texture6.jpg');
+    const texture = useLoader(TextureLoader, process.env.PUBLIC_URL + 'textures/texture.jpg');
    
 
 
     return (
-        <mesh position={[0, -0.5, -40]} rotation={[convertDegrees(0), 0, 0]} castShadow receiveShadow>
-            <planeGeometry args={[600, 600]} />
+        <mesh position={[0, -0.5, -10]} rotation={[convertDegrees(-4), 0, 0]} castShadow receiveShadow>
+            <planeGeometry args={[2000, 2000]} />
             {texture && (
                 <MeshReflectorMaterial
                     castShadow 
                     receiveShadow
-                    envMapIntensity={0}
+                    color={'lightgrey'}
+                    envMapIntensity={1}
                     map={texture}
-                    normalScale={[0.15, 0.15]}
+                    normalScale={[10, 10]}
                     dithering={true}
-                    roughness={0.7}
-                    blur={[1000, 400]}
-                    mixBlur={5}
+                    roughness={1}
+                    blur={[100, 100]}
                     mixStrength={50}
                     mixContrast={1}
                     resolution={1024}
-                    mirror={0.5}
+                    mirror={1}
                     depthScale={0.1}
-                    reflectorOffset={0}
+                    reflectorOffset={0.01}
                     depthToBlurRatioBias={0.1}
-                    minDepthThreshold={0.9}
-                    maxDepthThreshold={1.}
+                    
                 />
             )}
         </mesh>

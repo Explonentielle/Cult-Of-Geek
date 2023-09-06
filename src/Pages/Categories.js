@@ -9,7 +9,7 @@ const Themes = () => {
   const getQuizz = async () => {
     const response = await fetch('http://localhost:5500/api/quizz')
       .then(res => res.json());
-      setQuizzList(response);
+    setQuizzList(response);
   }
 
   useEffect(() => {

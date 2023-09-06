@@ -32,7 +32,7 @@ const Recap = () => {
     return (
         <div className='Container'>
             <form className='formContainer' onSubmit={handleSubmit}>
-                {message && <p className={message.includes('succès') ? 'success' : ''}>{message}</p>}
+                {message && <p className={message.includes('succès') ? 'success' : 'error'}>{message}</p>}
                 <h3>Quizz : {quizz.title}</h3>
                 {quizz.content.map((item,) => {
                     return (

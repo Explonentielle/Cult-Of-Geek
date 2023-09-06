@@ -9,7 +9,7 @@ import { useLoader } from '@react-three/fiber'
 
 const Letters = () => {
     const letterRefs = useRef([])
-    const texture = useLoader(TextureLoader, process.env.PUBLIC_URL + 'textures/texture4.jpg');
+    const texture = useLoader(TextureLoader, process.env.PUBLIC_URL + 'textures/texture.jpg');
     const [hoveredLetterIndex, setHoveredLetterIndex] = useState(null);
   
     useFrame((state) => {

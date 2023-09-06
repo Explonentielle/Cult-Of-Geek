@@ -1,6 +1,14 @@
 .accountContainer {
+    margin:2rem  10rem;
+    padding: 3rem;
     display: flex;
     flex-wrap: wrap;
+    background-color:rgba(240, 240, 240, 0.3);
+    border-radius: 3rem;
+
+    @media screen and (max-width: 770px) {
+           margin:2rem  2rem;
+    }
 
     .personalDataContainer {
         font-size: 1.5rem;
@@ -12,11 +20,15 @@
             flex-basis: 100%;
         }
 
+        h2{
+            font-family: 'Press Start 2P', cursive;
+        }
+
         div {
             display: flex;
 
             p{
-                font-family: 'Press Start 2P', cursive;
+                margin-left: 10px;
                 color: white;
             }
         }
@@ -28,6 +40,10 @@
         @media screen and (max-width: 1020px) {
             flex-basis: 100%;
         }
+
+        h2{
+            font-family: 'Press Start 2P', cursive;
+        }
     
         .quizzcontainer {
             display: flex;
@@ -37,12 +53,9 @@
                 border-radius: 3rem;
                 background-color: lightblue;
                 flex-basis: 45%;
-                padding: 2rem;
                 text-align: center;
-
-                p{
-                    margin: 0;
-                }
+                cursor: pointer;
+                margin: 2rem;
 
                 @media screen and (max-width: 1020px) {
                     flex-basis: 100%;
@@ -63,6 +76,10 @@
     text-transform: uppercase; 
     transition: background-color 0.3s ease, box-shadow 0.3s ease; 
     box-shadow:5px 5px 5px rgba(0, 0, 0, 0.4);
+
+    @media screen and (max-width: 530px) {
+        font-size: 1rem;
+    }
 }
 
 .personalDataContainer > div:last-child {

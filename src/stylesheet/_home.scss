@@ -2,279 +2,76 @@
 @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Gloria+Hallelujah&family=Nosifer&family=Press+Start+2P&family=Sedgwick+Ave+Display&display=swap');
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
 
-.acro {
-  font-size: 4rem;
-  text-transform: uppercase;
-  text-align: center;
-  line-height: 10rem;
-  font-family: 'Press Start 2P', cursive;
-
-  @media screen and (max-width: 768px) {
-    font-size: 2rem;
-    line-height: 5rem;
-  }
-}
 
 .canvaContainer {
+  background-color: #000;
   z-index: -5;
   position: absolute;
   top: 10vh;
   height: 80vh;
 }
 
-@keyframes leg {
-  0% {
-    transform: translateX(0);
-  }
-
-  25% {
-    transform: translateX(10%);
-  }
-
-  50% {
-    transform: translateX(0%);
-  }
-
-  75% {
-    transform: translateX(-10%);
-  }
-
-  100% {
-    transform: translate(0);
-  }
-}
-
-@keyframes move {
-  0% {
-    transform: translateX(-300px);
-  }
-
-  50% {
-    transform: translateX(600px);
-  }
-
-  100% {
-    transform: translateX(-300px);
-  }
-}
-
-@keyframes colorChange {
-  50% {
-    background-color: #1f3a93;
-  }
-}
-
-@keyframes pupil {
-  0% {
-    transform: translateX(0);
-  }
-
-  25% {
-    transform: translateX(10%);
-  }
-
-  49% {
-    transform: translateX(10%);
-    opacity: 1;
-  }
-
-  50% {
-    transform: translateX(10%);
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes bottomChomp {
-  0% {
-    transform: rotate(30deg);
-  }
-
-  50% {
-    transform: rotate(-45deg);
-  }
-
-  100% {
-    transform: rotate(30deg);
-  }
-}
-
-@keyframes topChomp {
-  0% {
-    transform: rotate(-30deg);
-  }
-
-  50% {
-    transform: rotate(30deg);
-  }
-
-  100% {
-    transform: rotate(-30deg);
-  }
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  50% {
-    transform: rotate(-180deg);
-  }
-
-  100% {
-    transform: rotate(0deg);
-  }
-}
-
-.loader-container {
-  overflow: hidden;
-  margin: 6% auto;
-  margin-left: -160px;
-  text-align: center;
-  color: #fff;
-  font-family: "Open Sans";
-}
-
-.animation-container {
-  margin-left: -160px;
-}
-
-.ghost-container {
-  height: 25px;
-  width: 25px;
-  display: inline-block;
-  animation: move 5s linear infinite;
-}
-
-.pac-man-move-container {
-  margin-left: 50px;
-  display: inline-block;
-  animation: move 5s linear infinite;
-}
-
-.pac-man-container {
-  height: 30px;
-  width: 30px;
-  display: inline-block;
-  animation: spin 5s cubic-bezier(1, 0.05, 1, -0.32) infinite;
-}
-
-.pac-man-top,
-.pac-man-bottom {
-  border: 14px solid yellow;
-  border-radius: 50%;
-  border-right-color: transparent;
-}
-
-.pac-man-top {
-  border-bottom-color: transparent;
-  animation: topChomp 0.3s linear infinite;
-}
-
-.pac-man-bottom {
-  margin-top: -100%;
-  border-top-color: transparent;
-  animation: bottomChomp 0.3s linear infinite;
-}
-
-.red .ghost-body,
-.red .ghost-leg {
-  background-color: #e74c3c;
-}
-
-.blue .ghost-body,
-.blue .ghost-leg {
-  background-color: #5c97bf;
-}
-
-.pink .ghost-body,
-.pink .ghost-leg {
-  background-color: #d2527f;
-}
-
-.orange .ghost-body,
-.orange .ghost-leg {
-  background-color: #eb974e;
-}
-
-.ghost-body {
-  height: 60%;
-  border-radius: 100% 100% 0 0;
-  animation: colorChange 5s cubic-bezier(1, 0.05, 1, -0.32) infinite;
-}
-
-.ghost-legs-container {
-  position: relative;
-  height: 30%;
-  overflow: hidden;
-}
-
-.ghost-leg {
-  width: 33.333%;
-  height: 100%;
-  float: left;
-  display: inline-block;
-  border-radius: 0 0 50% 50%;
-  animation: leg 0.8s linear 2s infinite,
-    colorChange 5s cubic-bezier(1, 0.05, 1, -0.32) infinite;
-}
-
-.eyes-container {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  height: 40%;
-  top: 30%;
-  margin: 0 10%;
-}
-
-.eye {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  float: left;
-  background-color: #fff;
-  height: 100%;
-  width: 40%;
-  border-radius: 50%;
-  overflow: hidden;
-}
-
-.eye>.pupil {
-  position: relative;
+.canvaContainerCategorie {
   background-color: #000;
-  height: 70%;
-  width: 70%;
-  border-radius: 50%;
-  animation: pupil 5s linear infinite;
-}
+  z-index: -5;
+  position: absolute;
+  top: 10vh;
+  height: 100vh;
 
-.icon-home {
-  width: 150px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: slideLeft 5s linear infinite;
-
-
-  img {
-    width: 150px;
-    height: auto;
-
+  @media screen and (max-width: 1030px) {
+    height: 120vh;
   }
 }
 
-@keyframes slideLeft {
-  0% {
-    transform: translateX(600%);
+.canvaContainerRegister{
+  background-color: #000;
+  z-index: -5;
+  position: absolute;
+  top: 10vh;
+  height: 80vh;
+
+  @media screen and (max-width: 770px) {
+    height: 130vh;
   }
 
-  100% {
-    transform: translateX(0%);
+  @media screen and (max-width: 530px) {
+    height: 135vh;
+  }
+}
+
+.canvaContainerAccount{
+  background-color: #000;
+  z-index: -5;
+  position: absolute;
+  top: 10vh;
+  height: 80vh;
+
+  @media screen and (max-width: 770px) {
+    height: 120vh;
+  }
+}
+
+.canvaContainerRecap{
+  background-color: #000;
+  z-index: -5;
+  position: absolute;
+  top: 10vh;
+  height: 105vh;
+
+  @media screen and (max-width: 530px) {
+    height: 120vh;
+  }
+}
+
+
+.canvaContainerContact{
+  background-color: #000;
+  z-index: -5;
+  position: absolute;
+  top: 10vh;
+  height: 80vh;
+
+  @media screen and (max-width: 1030px) {
+    height: 85vh;
   }
 }

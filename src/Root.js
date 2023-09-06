@@ -13,6 +13,7 @@ import emailjs from 'emailjs-com';
 import Account from './Pages/Account'
 import Recap from './Pages/Recap'
 import NewPassword from './Pages/NewPassword'
+import Layout from './components/Layout'
 import { AuthProvider } from './AuthContext';
 import axios from 'axios';
 axios.defaults.withCredentials = true;
@@ -39,6 +40,7 @@ const Root = () => {
           <Route exact path="/Nouveau-Mot-de-passe" element={<NewPassword />} />
         </Routes>
         <Footer />
+        <Layout />
       </AuthProvider>
     </BrowserRouter>
   )

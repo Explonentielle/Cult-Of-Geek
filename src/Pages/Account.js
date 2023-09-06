@@ -52,15 +52,15 @@ const Account = () => {
                     <div className='personalDataContainer'>
                         <h2>Mes Informations Perso</h2>
                         <div>
-                            <p>Nom : </p>
+                            <p>Nom :</p>
                             <p>{userData.fname} </p>
                         </div>
                         <div>
-                            <p>prenom : </p>
+                            <p>prenom :</p>
                             <p>{userData.name} </p>
                         </div>
                         <div>
-                            <p>Age : </p>
+                            <p>Age :</p>
                             <p>{userData.age} </p>
                         </div>
                         <div>
@@ -68,7 +68,7 @@ const Account = () => {
                             <p>{userData.location} </p>
                         </div>
                         <div>
-                            <p>email : </p>
+                            <p>email :</p>
                             <p>{userData.email} </p>
                         </div>
                         <div>
