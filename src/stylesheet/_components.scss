@@ -61,3 +61,8 @@
 .icon-white {
     color: white !important;
 }
+
+.cardContainer{
+    display: flex;
+    flex-direction: column;
+}

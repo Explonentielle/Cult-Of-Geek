@@ -21,6 +21,7 @@
         }
 
         h2{
+            font-size: 2rem;
             font-family: 'Press Start 2P', cursive;
         }
 
@@ -42,12 +43,11 @@
         }
 
         h2{
+            font-size: 2rem;
             font-family: 'Press Start 2P', cursive;
         }
     
         .quizzcontainer {
-            display: flex;
-            flex-wrap: wrap;
 
             .personalQuizz{
                 border-radius: 3rem;
@@ -60,6 +60,8 @@
 
                 p{
                     font-weight: 900;
+                    margin: 0;
+                    padding: 1rem;
                 }
 
                 @media screen and (max-width: 1020px) {
@@ -90,4 +92,9 @@
 .personalDataContainer > div:last-child {
     flex-direction: column;
     align-items: flex-start;
+}
+
+
+.personalQuizzCard{
+    display: flex;
 }

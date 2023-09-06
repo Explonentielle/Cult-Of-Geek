@@ -9,7 +9,7 @@ export function AuthProvider({ children }) {
 
   const fetchUserData = async () => {
     try {
-      const response = await axios.get('http://localhost:5500/api/Auth/getProfil'); 
+      const response = await axios.get('http://localhost:5500/api/Auth/getProfil');
       const userData = response.data;
 
       setUser(userData)
@@ -50,8 +50,17 @@ export function AuthProvider({ children }) {
     }
   };
 
+  const deleteUserQuiz = async (userId, quizId) => {
+    try {
+      const response = await axios.delete(`http://localhost:5500/api/Auth/${userId}/delete-quizz/${quizId}`);
+      console.log("Quiz supprimé avec succès :", response.data);
+    } catch (error) {
+      console.error("Erreur lors de la suppression du quiz :", error);
+    }
+  };
+
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
+    <AuthContext.Provider value={{ user, login, logout, deleteUserQuiz }}>
       {children}
     </AuthContext.Provider>
   );

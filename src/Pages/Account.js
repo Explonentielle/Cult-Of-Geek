@@ -7,10 +7,15 @@ import Card from "../components/Card";
 
 const Account = () => {
     const [userData, setUserData] = useState(null);
+    const [selectedQuizzes, setSelectedQuizzes] = useState([]);
     const navigate = useNavigate();
-    const { user } = useAuth()
+    const { user, deleteUserQuiz } = useAuth()
     const validThemes = ["Movies", "Series", "Cartoons", "VideoGame", "general"];
     let personalQuizzList;
+
+    useEffect(() => {
+        setUserData(user);
+    }, [user]);
 
     function shuffleArray(array) {
         for (let i = array.length - 1; i > 0; i--) {
@@ -29,33 +34,38 @@ const Account = () => {
         navigate("/Inscription")
     }
 
-    useEffect(() => {
-        setUserData(user);
-    }, [user]);
+    const toggleCheckbox = (idQuizz) => {
+        if (selectedQuizzes.includes(idQuizz)) {
+            setSelectedQuizzes(selectedQuizzes.filter((id) => id !== idQuizz));
+        } else {
+            setSelectedQuizzes([...selectedQuizzes, idQuizz]);
+        }
+    };
+
+    const handleDeleteClick = () => {
+        console.log("Quiz sélectionnés :", selectedQuizzes);
+        console.log(user._id)
+        selectedQuizzes.map((id) =>{
+            deleteUserQuiz(user._id, id)
+        })
+    };
 
     if (user) {
         personalQuizzList = user.quizzes.map((quizz, index) => {
-
-            const handleDeleteClick = () => {
-               console.log(user._id)
-               console.log(quizz._id)
-            };
-
             let className = validThemes.includes(quizz.title) ? quizz.title : validThemes[Math.floor(Math.random() * validThemes.length)];
 
             return (
-                <div key={index} className="personalQuizzCardContainer">
+                <div className='personalQuizzCard' key={index}>
                     <Card
                         className={`personalQuizz ${className} card`}
                         title={quizz.title}
                         action={() => handleClick(quizz.title, quizz.content)}
                     />
-                    <button
-                        className="deleteButton"
-                        onClick={handleDeleteClick}
-                    >
-                        ❌
-                    </button>
+                    <input
+                        type='checkbox'
+                        defaultChecked={selectedQuizzes.includes(quizz._id)}
+                        onChange={() => toggleCheckbox(quizz._id)}
+                    ></input>
                 </div>
             );
         })
@@ -97,6 +107,7 @@ const Account = () => {
                         <div className='quizzcontainer'>
                             {user ? personalQuizzList : ""}
                         </div>
+                        <input type="button" onClick={handleDeleteClick} className='changePassword' value="suprimer la selection" />
                     </div>
                     <LoginBar
                         className='loginBar'
