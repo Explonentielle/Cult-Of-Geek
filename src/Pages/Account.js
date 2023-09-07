@@ -9,12 +9,17 @@ const Account = () => {
     const [userData, setUserData] = useState(null);
     const [selectedQuizzes, setSelectedQuizzes] = useState([]);
     const navigate = useNavigate();
-    const { user, deleteUserQuiz } = useAuth()
+    const { user, deleteUserQuiz } = useAuth()  
     const validThemes = ["Movies", "Series", "Cartoons", "VideoGame", "general"];
     let personalQuizzList;
 
     useEffect(() => {
         setUserData(user);
+        if (user){ 
+            user.quizzes.forEach((quizz, index) => {
+                user.quizzes[index].className = validThemes.includes(quizz.title) ? quizz.title : validThemes[Math.floor(Math.random() * validThemes.length)];
+            });
+        }
     }, [user]);
 
     function shuffleArray(array) {
@@ -50,14 +55,12 @@ const Account = () => {
         })
     };
 
-    if (user) {
+    if (userData) {
         personalQuizzList = user.quizzes.map((quizz, index) => {
-            let className = validThemes.includes(quizz.title) ? quizz.title : validThemes[Math.floor(Math.random() * validThemes.length)];
-
             return (
                 <div className='personalQuizzCard' key={index}>
                     <Card
-                        className={`personalQuizz ${className} card`}
+                        className={`personalQuizz ${quizz.className} card`}
                         title={quizz.title}
                         action={() => handleClick(quizz.title, quizz.content)}
                     />

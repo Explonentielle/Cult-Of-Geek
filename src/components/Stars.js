@@ -7,13 +7,13 @@ import * as THREE from 'three';
 
 const Stars = (props) => {
     const ref = useRef();
-    const starCount = 5000;
+    const starCount = 50000;
     const positions = new Float32Array(starCount * 3);
   
     for (let i = 0; i < starCount; i++) {
-      positions[i * 3] = (Math.random() - 0.5) * 20; 
-      positions[i * 3 + 1] = (Math.random() - 0.5) * 20; 
-      positions[i * 3 + 2] = (Math.random() - 0.5) * 20; 
+      positions[i * 3] = (Math.random() - 0.5) * 50; 
+      positions[i * 3 + 1] = (Math.random() - 0.5) * 50; 
+      positions[i * 3 + 2] = (Math.random() - 0.5) * 50; 
     }
 
     useFrame((state, delta) => {

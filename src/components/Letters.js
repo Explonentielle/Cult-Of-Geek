@@ -28,7 +28,7 @@ const Letters = () => {
       const speed = 0.2;
       const jumpNextLetter = (index) => {
         if (index >= letters.letters.length) {
-          setTimeout(() => (setHoveredLetterIndex(null)), 300);
+          setTimeout(() => (setHoveredLetterIndex(null)), 500);
           return;
         }
         setHoveredLetterIndex(index);
@@ -49,7 +49,7 @@ const Letters = () => {
       }, [])
   
     return (
-        <Text3D font="/PressStart.json">
+        <Text3D font="/Exo2.json">
             {letters.letters.map((letter, index) => (
                 <mesh
                     key={index}
@@ -64,10 +64,11 @@ const Letters = () => {
                         curveSegments={32}
                         bevelEnabled
                         bevelSize={0.04}
-                        bevelThickness={0.1}
+                        bevelThickness={0.02}
+                        depthFactor={0.01}
                         height={0.5}
                         size={1}
-                        font="/PressStart.json"
+                        font="/Exo2.json"
                     >
                         {letter.letter}
                         <meshStandardMaterial 
