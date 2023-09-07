@@ -18,7 +18,7 @@ CulturePopQuiz est une plateforme web interactive qui permet aux utilisateurs de
 
 ## **Aperçu**
 
-![Aperçu de CulturePopQuiz](public/media/readme.png)
+![Aperçu de la maquette CulturePopQuiz](public/media/readme.png)
 
 ---
 
