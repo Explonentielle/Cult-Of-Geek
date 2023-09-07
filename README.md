@@ -38,7 +38,7 @@ CulturePopQuiz est une plateforme web interactive qui permet aux utilisateurs de
 
 - **React** : La plateforme est développée en utilisant la bibliothèque JavaScript React pour une expérience utilisateur interactive et réactive.
 
-- **Firebase** : Firebase est utilisé pour stocker et gérer les quiz créés par les utilisateurs, ainsi que pour gérer l'authentification.
+- **Node Js** : Node est utilisé pour stocker et gérer les quiz créés par les utilisateurs, ainsi que pour gérer l'authentification.
 
 - **SASS** : Les styles sont mis en forme à l'aide de CSS pour une interface utilisateur attrayante et conviviale.
 
