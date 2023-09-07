@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 const LoginBar = ({ className }) => {
-    const { user, login, logout } = useAuth()
+    const { user, login, logout, msg } = useAuth()
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate()
@@ -22,6 +22,7 @@ const LoginBar = ({ className }) => {
         logout()
         setEmail('');
         setPassword('');
+        navigate('/')
     };
 
     const handlepassword = () =>{
@@ -52,6 +53,7 @@ const LoginBar = ({ className }) => {
                             </div>
                         </div>
                         <button type='submit' className='connexionBtn' onClick={handleLogin}>Connexion</button>
+                        {msg ? msg : ""}
                         <p className='forgotpassword' onClick={handlepassword}>Mot de passe oublié</p>
                     </form>
                 </div>

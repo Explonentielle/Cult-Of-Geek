@@ -6,6 +6,8 @@ const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
+  const [msg, setmsg] = useState(null);
+
 
   const fetchUserData = async () => {
     try {
@@ -36,6 +38,7 @@ export function AuthProvider({ children }) {
       setUser(response.data.user);
     } catch (error) {
       console.error(error);
+      setmsg(error.message)
     }
   };
 
@@ -60,7 +63,7 @@ export function AuthProvider({ children }) {
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout, deleteUserQuiz }}>
+    <AuthContext.Provider value={{ user, login, logout, deleteUserQuiz, msg }}>
       {children}
     </AuthContext.Provider>
   );
