@@ -38,7 +38,7 @@ export function AuthProvider({ children }) {
       setUser(response.data.user);
     } catch (error) {
       console.error(error);
-      setmsg(error.message)
+      setmsg("probleme d'Authentification")
     }
   };
 
